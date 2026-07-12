@@ -15,8 +15,16 @@
     <a class="back" href="001.html">次 ›</a>
   </nav>
 <article class="plate" id="p016">
-    <figure class="specimen"><div class="mount"><img src="../img/016.jpg" loading="lazy" alt="素焼き鉢に植わった球形の王冠竜。青緑の肌に太く丸い稜、わら色の長い刺が放射状に密生。となりに黒いクマのぬいぐるみ・星太郎が伏せて寄り添う。"></div>
-      <figcaption class="specimen-tag"><span class="st-no">No. 016</span><span class="st-sp">王冠竜（オウカンリュウ）</span><span class="st-meta">登録 2026.07.12 &middot; サボテン・室内 &middot; 星太郎さんと</span></figcaption>
+    <figure class="specimen">
+      <div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/016.jpg" loading="lazy" alt="素焼き鉢に植わった球形の王冠竜。青緑の肌に太く丸い稜、わら色の長い刺が放射状に密生。となりに黒いクマのぬいぐるみ・星太郎が伏せて寄り添う。">
+        <img class="g-img" data-idx="1" src="../img/016b.jpg" loading="lazy" alt="王冠竜の頭上アップ。成長点は白いふわふわの綿毛に覆われ、新しい刺座と刺が次々と出ている。濃い青緑の肌に青白いブルームと水滴。">
+      </div>
+      <div class="g-bar" role="group" aria-label="写真を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 星太郎さんと</button>
+        <button type="button" class="g-dot" data-idx="1">② 頭上（成長点アップ）</button>
+      </div>
+      <figcaption class="specimen-tag"><span class="st-no">No. 016</span><span class="st-sp">王冠竜（オウカンリュウ）</span><span class="st-meta">登録 2026.07.12 &middot; サボテン・室内 &middot; 成長記録</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">王冠竜</h2><p class="sci-name"><i>Ferocactus glaucescens</i> (DC.) Britton &amp; Rose</p><p class="aka">別名 · 青王冠竜／フェロカクタス・グラウケスケンス</p><p class="family">サボテン科 &middot; Cactaceae（フェロカクタス属＝強刺類）</p><p class="cultivar"><span class="cv-key">おうちの植物</span>世話：陽介 · 星太郎さんの相棒<span class="cv-sub">まるっこいのに、迂闊に近づくと噛みつく</span></p></div>
     <section class="field"><h3 class="field-label">学名の由来</h3><div class="field-body"><ul>
@@ -40,7 +48,7 @@
         <div class="care-row"><dt>🌱 肥料 ・ 安全</dt><dd>肥料は少なめ（成長期に緩効性を少量）。⚠<strong>刺が鋭い</strong>ので、作業は厚手の手袋・株を新聞紙で巻いて。</dd></div>
       </dl>
       <p class="care-note">※サボテン栽培の一般的な目安。うちの置き場所・季節を見ながら、二人なりに調整しよう。</p>
-      <p class="care-note"><strong>【うちでは】</strong>素焼き鉢＋軽石まじりの用土で、水はけよく育てている。うちは西向きの窓に<strong>レースのカーテン越し</strong>——サボテンは強い日ざしを好むので、<strong>レースを開けて直射</strong>を当てるか、夏は屋外の日なたも◎。夏は冷房＋SwitchBotで<strong>室温22〜23℃・湿度50〜60%</strong>（乾燥を好むので、むしろ過湿に注意）。水は月1〜2回・冬は断水ぎみ。<strong>今のところ、肌のハリ・球形・てっぺんの新しい刺から、元気そう。</strong></p>
+      <p class="care-note"><strong>【うちでは】</strong>素焼き鉢＋軽石まじりの用土で、水はけよく育てている。うちは西向きの窓に<strong>レースのカーテン越し</strong>——サボテンは強い日ざしを好むので、<strong>レースを開けて直射</strong>を当てるか、夏は屋外の日なたも◎。夏は冷房＋SwitchBotで<strong>室温22〜23℃・湿度50〜60%</strong>（乾燥を好むので、むしろ過湿に注意）。水は月1〜2回・冬は断水ぎみ。<strong>今のところ、肌のハリ・球形・てっぺんの新しい刺から、元気そう。</strong>（久しぶりの水やりのあと頂部を確認＝成長点は白い綿毛と新しい刺に覆われ、肉質は硬く引き締まり、青白いブルームも健在。しっかり成長中だった → 写真②）</p>
       <p class="care-src">参考：サボテン・多肉植物の一般的な栽培管理（強刺類フェロカクタスの育て方）をもとに整理。</p>
     </section>
     <aside class="memo"><div class="memo-head"><span class="memo-mark">🧸</span><span>陽介の一言メモ</span></div>
@@ -54,5 +62,6 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
 </body>
 </html>
