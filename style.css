@@ -27,6 +27,14 @@
   *{box-sizing:border-box}
   [hidden]{display:none !important}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  /* 本文中のリンク（草花どうしをつなぐリンク）。
+     ブラウザ既定の青(#0000EE)は暗い背景でコントラスト1.87しかなく読めない＝必ず色を与える。
+     --green は 明るい背景7.37 / 暗い背景10.95 で両方AA合格の唯一の色。
+     ※素の a セレクタ(0,0,1)なので .back / .portal / .index-list a などのクラス指定には必ず負ける＝既存のリンクは壊れない。 */
+  a{color:var(--green);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:var(--line-strong);transition:color .15s ease,text-decoration-color .15s ease}
+  a:visited{color:var(--green)}
+  a:hover{text-decoration-color:currentColor}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
   .guide{max-width:720px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(18px,5vw,40px) 72px}
   html.js .plate{display:none}
   html.js .plate.show{display:block}
