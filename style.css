@@ -157,3 +157,14 @@
 .idxgroup{margin-bottom:30px}
 .idxgroup h2{font-family:var(--label);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:600;margin:0 0 12px;display:flex;align-items:center;gap:10px}
 .idxgroup h2::after{content:"";flex:1;height:0;border-top:1px solid var(--line)}
+/* 索引グループの開閉（details/summary） */
+.idxgroup > summary{display:flex;align-items:center;gap:10px;cursor:pointer;padding:8px 6px;margin:0 0 4px;border-radius:3px;list-style:none;-webkit-tap-highlight-color:transparent;transition:background .15s ease}
+.idxgroup > summary::-webkit-details-marker{display:none}
+.idxgroup > summary::marker{content:""}
+.idxgroup > summary:hover{background:var(--paper-2)}
+.idxgroup > summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.idxgroup > summary h2{margin:0;flex:1;min-width:0}
+.idx-count{font-family:var(--label);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);white-space:nowrap;flex:none}
+.idx-chev{flex:none;width:8px;height:8px;border-right:1.6px solid var(--sage);border-bottom:1.6px solid var(--sage);transform:translateY(-2px) rotate(45deg);transition:transform .18s ease}
+.idxgroup[open] > summary .idx-chev{transform:translateY(1px) rotate(-135deg)}
+@media (prefers-reduced-motion: reduce){.idx-chev{transition:none}}
