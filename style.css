@@ -159,6 +159,16 @@
   .g-bar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:center}
   .g-dot{font-family:var(--label);font-size:11px;letter-spacing:.06em;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:6px 12px;cursor:pointer}
   .g-dot.on{color:var(--green);border-color:var(--gold);background:var(--paper-2);font-weight:600}
+  /* 原産地マップ（写真と同じギャラリーの1枚として切り替える） */
+  .gallery .g-map{display:none}
+  .gallery .g-map.show{display:block}
+  .g-map{background:var(--panel);border-radius:2px;padding:8px 6px}
+  .g-map svg{width:100%;height:auto;display:block}
+  .g-map .c{fill:var(--paper-2);stroke:var(--line-strong);stroke-width:.6;vector-effect:non-scaling-stroke}
+  .g-map .c.on{fill:var(--green);stroke:var(--ink)}
+  .g-map-note{margin:8px 4px 0;font-size:11.5px;line-height:1.7;color:var(--ink-soft);font-style:italic}
+  .g-map-note b{font-style:normal;color:var(--green)}
+  .g-map-load{padding:26px 0;text-align:center;font-family:var(--label);font-size:12px;letter-spacing:.1em;color:var(--ink-soft)}
   .g-dot:hover{background:var(--paper-2)}
   .g-dot:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   .care{background:var(--paper-2);border:1px solid var(--line);border-radius:3px;padding:16px 18px}
