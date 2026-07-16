@@ -82,6 +82,19 @@
   .trail-next{margin:10px 0 0;padding-top:10px;border-top:1px dotted var(--line);font-family:var(--label);font-size:12px;letter-spacing:.06em;color:var(--sage)}
   .trails-note{margin:2px 0 0;font-size:14px;line-height:1.75;color:var(--ink-soft);font-style:italic}
 
+  /* 表紙から専用ページへの入口カード */
+  .portals{display:grid;gap:14px;margin:0 0 34px}
+  .portal{display:block;background:var(--paper-2);border:1px solid var(--line);border-radius:3px;padding:18px 20px 14px;text-decoration:none;color:inherit;transition:background .15s ease,border-color .15s ease}
+  .portal:hover{background:var(--panel);border-color:var(--line-strong)}
+  .portal:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .portal-marks{display:block;font-size:16px;letter-spacing:.16em;line-height:1.6;margin-bottom:10px}
+  .portal-name{display:block;font-family:var(--serif);font-size:21px;font-weight:600;color:var(--ink);letter-spacing:.02em;margin-bottom:6px}
+  .portal-sub{display:block;font-size:14.5px;line-height:1.7;color:var(--ink-soft);font-style:italic}
+  .portal-go{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1px dotted var(--line);font-family:var(--label);font-size:12px;letter-spacing:.08em;color:var(--sage)}
+  .portal-arrow{margin-left:auto;flex:none;width:7px;height:7px;border-right:1.6px solid var(--sage);border-bottom:1.6px solid var(--sage);transform:rotate(-45deg);transition:transform .15s ease}
+  .portal:hover .portal-arrow{transform:rotate(-45deg) translate(2px,2px)}
+  @media (prefers-reduced-motion: reduce){.portal-arrow{transition:none}}
+
   .season-hunt{background:var(--paper-2);border:1px solid var(--line);border-radius:3px;padding:20px 22px;margin-bottom:8px;position:relative}
   .hunt-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
   .hunt-list li{display:inline-flex;align-items:baseline;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:7px 13px}
