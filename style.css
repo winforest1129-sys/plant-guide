@@ -3,6 +3,7 @@
     --paper:#ECEEE2;--paper-2:#E3E6D6;--panel:#F5F6EE;--ink:#262A1E;--ink-soft:#565C46;
     --green:#43502F;--sage:#7C8A63;--gold:#AD8227;--line:rgba(38,42,30,.16);
     --line-strong:rgba(38,42,30,.30);--shadow:rgba(38,42,30,.12);
+    --range-lo:#4E9E2E;--range-hi:#7ED957;--range-edge:#2F6B1A;--range-glow:rgba(80,175,45,.45);--range-glow-hi:rgba(90,200,50,.75);--range-blur:4px;
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Hoefler Text",Georgia,"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP",serif;
     --label:"Optima","Gill Sans","Gill Sans MT","Yu Gothic UI","Yu Gothic","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
   }
@@ -11,14 +12,17 @@
       --paper:#171A12;--paper-2:#202417;--panel:#1E2216;--ink:#E9EBDB;--ink-soft:#AAB194;
       --green:#C3D2A2;--sage:#8D9C6F;--gold:#D3A94C;--line:rgba(233,235,219,.15);
       --line-strong:rgba(233,235,219,.28);--shadow:rgba(0,0,0,.35);
+      --range-lo:#4FA830;--range-hi:#A8EE72;--range-edge:#D6F7A8;--range-glow:rgba(120,230,80,.55);--range-glow-hi:rgba(150,255,110,1);--range-blur:7px;
     }
   }
   :root[data-theme="light"]{
+    --range-lo:#4E9E2E;--range-hi:#7ED957;--range-edge:#2F6B1A;--range-glow:rgba(80,175,45,.45);--range-glow-hi:rgba(90,200,50,.75);--range-blur:4px;
     --paper:#ECEEE2;--paper-2:#E3E6D6;--panel:#F5F6EE;--ink:#262A1E;--ink-soft:#565C46;
     --green:#43502F;--sage:#7C8A63;--gold:#AD8227;--line:rgba(38,42,30,.16);
     --line-strong:rgba(38,42,30,.30);--shadow:rgba(38,42,30,.12);
   }
   :root[data-theme="dark"]{
+    --range-lo:#4FA830;--range-hi:#A8EE72;--range-edge:#D6F7A8;--range-glow:rgba(120,230,80,.55);--range-glow-hi:rgba(150,255,110,1);--range-blur:7px;
     --paper:#171A12;--paper-2:#202417;--panel:#1E2216;--ink:#E9EBDB;--ink-soft:#AAB194;
     --green:#C3D2A2;--sage:#8D9C6F;--gold:#D3A94C;--line:rgba(233,235,219,.15);
     --line-strong:rgba(233,235,219,.28);--shadow:rgba(0,0,0,.35);
@@ -153,6 +157,16 @@
   .back:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   .specimen{margin:0 0 24px}
   .specimen .mount{background:var(--paper);padding:12px;border:1px solid var(--line);box-shadow:inset 0 0 0 1px var(--panel),0 2px 6px -3px var(--shadow)}
+  /* 押しているあいだの拡大窓（虫めがね）。写真でも地図でも効く。 */
+  .mount.zoomable{position:relative;cursor:zoom-in}
+  .mount.zoomable.zooming{cursor:none}
+  .zoom-lens{position:absolute;width:190px;height:190px;border-radius:50%;overflow:hidden;
+    border:2px solid var(--gold);background:var(--paper);
+    box-shadow:0 0 0 1px var(--panel),0 8px 22px -6px var(--shadow);
+    pointer-events:none;z-index:5}
+  .zoom-lens>*{position:absolute;margin:0;padding:0;border:0;max-width:none;display:block}
+  .zoom-hint{margin:8px 4px 0;font-family:var(--label);font-size:11px;letter-spacing:.08em;color:var(--ink-soft)}
+  @media (max-width:520px){.zoom-lens{width:150px;height:150px}}
   .specimen img{display:block;width:100%;height:auto}
   .gallery .g-img{display:none}
   .gallery .g-img.show{display:block}
@@ -165,7 +179,18 @@
   .g-map{background:var(--panel);border-radius:2px;padding:8px 6px}
   .g-map svg{width:100%;height:auto;display:block}
   .g-map .c{fill:var(--paper-2);stroke:var(--line-strong);stroke-width:.6;vector-effect:non-scaling-stroke}
-  .g-map .c.on{fill:var(--green);stroke:var(--ink)}
+  /* 分布は「明るい緑でゆっくり光る」（燻太さんのリクエスト）。
+     色はテーマに依らず一定の明るい緑＝どちらの地の色でも浮く。 */
+  .g-map .c.on{fill:var(--range-hi);stroke:var(--range-edge);stroke-width:1.1;
+    filter:drop-shadow(0 0 2px var(--range-glow));
+    animation:rangeGlow 3.2s ease-in-out infinite}
+  @keyframes rangeGlow{
+    0%,100%{fill:var(--range-lo);filter:drop-shadow(0 0 1.5px var(--range-glow))}
+    50%    {fill:var(--range-hi);filter:drop-shadow(0 0 var(--range-blur) var(--range-glow-hi))}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .g-map .c.on{animation:none;fill:var(--range-hi);filter:drop-shadow(0 0 3px var(--range-glow))}
+  }
   .g-map-note{margin:8px 4px 0;font-size:11.5px;line-height:1.7;color:var(--ink-soft);font-style:italic}
   .g-map-note b{font-style:normal;color:var(--green)}
   .g-map-load{padding:26px 0;text-align:center;font-family:var(--label);font-size:12px;letter-spacing:.1em;color:var(--ink-soft)}
