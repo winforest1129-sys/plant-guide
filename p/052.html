@@ -15,7 +15,17 @@
     <a class="back" href="053.html">次 ›</a>
   </nav>
 <article class="plate" id="p052">
-    <figure class="specimen"><div class="mount"><img src="../img/052.jpg" loading="lazy" alt="灰色の細い枝に、細長い革質の葉が対生する。葉の裏は銀白色。枝には緑色の楕円形の未熟なオリーブの実が数個ぶら下がる。背景は枯れかけた芝生。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/052.jpg" loading="lazy" alt="灰色の細い枝に、細長い革質の葉が対生する。葉の裏は銀白色。枝には緑色の楕円形の未熟なオリーブの実が数個ぶら下がる。背景は枯れかけた芝生。">
+        <div class="g-map" data-idx="1" data-cc="PT,ES,FR,IT,GR,HR,SI,BA,ME,AL,MK,TR,CY,SY,LB,IL,PS,EG,LY,TN,DZ,MA,JO,IQ,IR"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>地中海沿岸〜西アジア</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 052</span><span class="st-sp">オリーブ</span><span class="st-meta">登録 2026.07.16 &middot; 夏（撮影 2026.07.15）&middot; 近所のお庭</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">オリーブ</h2><p class="sci-name"><i>Olea europaea</i> L.</p><p class="aka">別名 · オリブ／橄欖（かんらん・慣用） ／ 品種は写真では特定不可</p><p class="family">モクセイ科 &middot; Oleaceae（オリーブ属）<strong>── この図鑑で初めての科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの気づき</span>「近所の一軒家のお庭の子。<strong>家で使うオイル漬けの色が二種類あるのも気になる</strong>」<span class="cv-sub">……<strong>その台所の「二色」が、図鑑の色の小道と、スイフヨウにつながった。</strong></span></p></div>
@@ -84,5 +94,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

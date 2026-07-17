@@ -15,7 +15,17 @@
     <a class="back" href="071.html">次 ›</a>
   </nav>
 <article class="plate" id="p070">
-    <figure class="specimen"><div class="mount"><img src="../img/070.jpg" loading="lazy" alt="バナナに似た大きな葉のあいだから立ち上がる、金色の蓮のような花。広い黄色の苞が幾重にも重なり、中心から小さな花がのぞく。温室、逆光。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/070.jpg" loading="lazy" alt="バナナに似た大きな葉のあいだから立ち上がる、金色の蓮のような花。広い黄色の苞が幾重にも重なり、中心から小さな花がのぞく。温室、逆光。">
+        <div class="g-map" data-idx="1" data-cc="CN-SC,CN-GZ,CN-YN"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>中国（四川・貴州・雲南の高山、標高2500mまで）</b>。<br>⭐<b>中国の3つの省だけ</b>。しかも<b>標高2500mまでの高山</b>。──温室のあの子は、ずいぶん遠くから来ている。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 070</span><span class="st-sp">チユウキンレン（地涌金蓮）</span><span class="st-meta">登録 2026.07.16 &middot; 花は3〜6か月（撮影 2019）&middot; 植物園の温室</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">チユウキンレン（地涌金蓮）</h2><p class="sci-name"><i>Musella lasiocarpa</i> (Franch.) H.W.Li</p><p class="aka">別名 · ゴールデンロータスバナナ／地湧金蓮 ／ ムセラ属（1属1種）</p><p class="family">バショウ科 &middot; Musaceae（ムセラ属）<strong>── 069 バナナのいとこ</strong></p><p class="cultivar"><span class="cv-key">燻太さんが「お花の写真も」と</span>金色の蓮。じつは、バナナの花ではなく、そのいとこ<span class="cv-sub">そして、金の蓮の正体は「苞」</span></p></div>
@@ -49,5 +59,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

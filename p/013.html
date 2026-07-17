@@ -15,7 +15,17 @@
     <a class="back" href="014.html">次 ›</a>
   </nav>
 <article class="plate" id="p013">
-    <figure class="specimen"><div class="mount"><img src="../img/013.jpg" loading="lazy" alt="仙台の野草園の湿った苔の林床に生えた、掌状に5〜7裂した葉のロゼット。葉に白いまだら模様。まわりにシダ。花はない、同定中の野草。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/013.jpg" loading="lazy" alt="仙台の野草園の湿った苔の林床に生えた、掌状に5〜7裂した葉のロゼット。葉に白いまだら模様。まわりにシダ。花はない、同定中の野草。">
+        <div class="g-map" data-idx="1" data-cc="?"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生していた場所</b>。──でも<b>この子は、まだ名前が分からない</b>。名前が分からないと、ふるさとも分からないんだ。だから地図は<b>まっさらのまま</b>、まんなかに「？」を出しておくね。<b>分かったら、ここを塗りに来るよ。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 013</span><span class="st-sp">なぞの野草（同定中）</span><span class="st-meta">仙台市野草園 &middot; GW &middot; 宿題</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">なぞの野草</h2><p class="sci-name">同定中 — キンポウゲ科（Ranunculaceae）か？</p><p class="aka">仙台市野草園・ゴールデンウィーク・葉のみ（花なし）</p><p class="family">科も未確定</p><p class="cultivar"><span class="cv-key">宿題</span>いつか花を見て名前をつける<span class="cv-sub">二人の“これから解く謎”</span></p></div>
@@ -48,5 +58,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

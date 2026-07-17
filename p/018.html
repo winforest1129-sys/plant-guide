@@ -15,7 +15,17 @@
     <a class="back" href="019.html">次 ›</a>
   </nav>
 <article class="plate" id="p018">
-    <figure class="specimen"><div class="mount"><img src="../img/018.jpg" loading="lazy" alt="青緑の肉厚の葉が整ったロゼットを組むエケベリア・パルバ。葉には白い粉（ブルーム）、葉先はわずかに尖って赤みを帯びる。ラベルに ECHEVERIA SUCCULENT パルバ。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/018.jpg" loading="lazy" alt="青緑の肉厚の葉が整ったロゼットを組むエケベリア・パルバ。葉には白い粉（ブルーム）、葉先はわずかに尖って赤みを帯びる。ラベルに ECHEVERIA SUCCULENT パルバ。">
+        <div class="g-map" data-idx="1" data-cc="MX"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>メキシコ（属として）</b>。<br>⚠これは<b>属（エケベリア属）のふるさと</b>。この子は園芸品種で、種が分からないから、なかま全体の故郷を塗ったよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 018</span><span class="st-sp">エケベリア・パルバ</span><span class="st-meta">登録 2026.07.12 &middot; 多肉・室内</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">エケベリア・パルバ</h2><p class="sci-name"><i>Echeveria</i> 'Parva'（園芸品種）</p><p class="aka">別名 · パルバ</p><p class="family">ベンケイソウ科 &middot; Crassulaceae（エケベリア属）</p><p class="cultivar"><span class="cv-key">おうちの植物</span>世話：陽介 · ラベル「パルバ」<span class="cv-sub">日ざしを浴びるとロゼットが締まる</span></p></div>
@@ -53,5 +63,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

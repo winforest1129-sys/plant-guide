@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/047.jpg" loading="lazy" alt="濃いマゼンタの八重咲きダリアのアップ。幾重にも重なった花びらの中心には、まだ小さな筒がくるっと巻いた花が残っている。まわりの葉と茎は黒紫色。">
         <img class="g-img" data-idx="1" src="../img/047b.jpg" loading="lazy" alt="ダリアの株全体。黒紫の羽状の葉が茂り、緑の支柱が立つ。左上に丸いつぼみ、右に花びらが縮れた咲きがら。花はマゼンタ一輪だけが開いている。">
+        <div class="g-map" data-idx="2" data-cc="MX,GT"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 花のアップ（中心を見て）</button>
         <button type="button" class="g-dot" data-idx="1">② 株ぜんたい（黒い葉・つぼみ・咲きがら）</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>メキシコ〜グアテマラの高地</b>。<br>⭐<b>高地</b>の子。メキシコ・グアテマラの<b>山の上</b>で生まれた花が、日本の夏の花壇にいる。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 047</span><span class="st-sp">ダリア（黒葉の品種）</span><span class="st-meta">登録 2026.07.15 &middot; 夏〜秋（撮影 2026.07.14 17:56）&middot; 港の横の花壇</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ダリア（天竺牡丹）</h2><p class="sci-name"><i>Dahlia pinnata</i> Cav.（園芸ダリア · 品種名は特定不可）</p><p class="aka">和名 · テンジクボタン ／ <strong>メキシコの国花</strong>。アステカでは神聖な花だった</p><p class="family">キク科 &middot; Asteraceae（ダリア属 &middot; <strong>コスモス連 Coreopsideae</strong>）</p><p class="cultivar"><span class="cv-key">燻太さんの見立て</span>「見るからにキク科。<strong>この花一輪咲かせるのに、すごいエネルギーを使いそう</strong>」<span class="cv-sub">……<strong>その勘は、ど真ん中だった。この子の物語は、ぜんぶ「エネルギー」の話だった。</strong></span></p></div>
@@ -126,6 +131,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

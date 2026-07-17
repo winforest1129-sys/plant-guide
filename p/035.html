@@ -15,7 +15,17 @@
     <a class="back" href="036.html">次 ›</a>
   </nav>
 <article class="plate" id="p035">
-    <figure class="specimen"><div class="mount"><img src="../img/035.jpg" loading="lazy" alt="カレー屋さんの玄関先に茂った大株のフェンネル。傘の骨が二段にひらいたような黄色い複散形花序と、緑にふくらんだ細長い若い果実が同じ株に同居する。糸のように細い葉と、太く粉を吹いた茎。花序の中央にカメムシが一匹。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/035.jpg" loading="lazy" alt="カレー屋さんの玄関先に茂った大株のフェンネル。傘の骨が二段にひらいたような黄色い複散形花序と、緑にふくらんだ細長い若い果実が同じ株に同居する。糸のように細い葉と、太く粉を吹いた茎。花序の中央にカメムシが一匹。">
+        <div class="g-map" data-idx="1" data-cc="PT,ES,FR,IT,GR,HR,SI,BA,ME,AL,MK,TR,CY,SY,LB,IL,PS,EG,LY,TN,DZ,MA"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>地中海地方</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 035</span><span class="st-sp">フェンネル</span><span class="st-meta">登録 2026.07.13 &middot; 夏 &middot; 近くの島・カレー屋さんの玄関先（2025.07.31）</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">フェンネル（ウイキョウ／茴香）</h2><p class="sci-name"><i>Foeniculum vulgare</i> Mill.</p><p class="aka">別名 · ウイキョウ／ヒンディー語 <strong>सौंफ（サウンフ）</strong>＝インド料理店の、あの口直しの粒</p><p class="family">セリ科 &middot; Apiaceae（ウイキョウ属）</p><p class="cultivar"><span class="cv-key">燻太さんの見立て</span>「カレーに使うのかな」「お花の形はおっきなセリだね」<span class="cv-sub">……<strong>2つとも、当たり。</strong></span></p></div>
@@ -59,5 +69,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

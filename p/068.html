@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/068.jpg" loading="lazy" alt="枝分かれしない幹の上部、葉のかんむりの下に、黄色い実がかたまってなる。1つは橙色に熟しかけ。手のひら状の葉が放射状。温室の屋根と青空。">
         <img class="g-img" data-idx="1" src="../img/068b.jpg" loading="lazy" alt="手のひらを大きく広げて深く切れ込んだような、特徴的なパパイヤの葉。中空の長い葉柄の先につき、幹の上部から放射状に開く。温室。">
+        <div class="g-map" data-idx="2" data-cc="MX,GT,BZ,SV,HN,NI,CR,PA,CU,JM,HT,DO,PR,BS,TT"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 幹の上部にかたまる実</button>
         <button type="button" class="g-dot" data-idx="1">② 特徴的な手のひらの葉</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>中央アメリカ（メキシコ〜西インド諸島）</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 068</span><span class="st-sp">パパイヤ</span><span class="st-meta">登録 2026.07.16 &middot; 熱帯（撮影 2019・約7年前）&middot; 植物園の温室</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">パパイヤ（蕃瓜樹）</h2><p class="sci-name"><i>Carica papaya</i> L.</p><p class="aka">別名 · パパイア／チチウリ／ポーポー（沖縄）</p><p class="family">パパイア科 &middot; Caricaceae（パパイア属）<strong>── この図鑑で初めての科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「葉っぱも特徴的なフルーツ。<strong>ほとんど食べたことがない、どんな味？ 畑にポツンと…趣味で育ててる？</strong>」<span class="cv-sub">……その問いに、ぜんぶ答えがある</span></p></div>
@@ -70,6 +75,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/038.jpg" loading="lazy" alt="真っ白なフヨウの花を正面から。大きな五枚の花弁が皿のようにひらき、中心には黄色い柱（単体雄蕊）が立ち、その先に五つに分かれためしべの頭が突き出している。下に大きな掌状の葉。奥にピンクの花がふたつ、ぼやけて見える。">
         <img class="g-img" data-idx="1" src="../img/038b.jpg" loading="lazy" alt="曇り空を背景に、横から見た白いフヨウの花。がくの下に細い副萼片が輪になってついている。すぐ下には、昨日咲いてしぼんだ花がねじれて黒っぽく垂れ下がっている。">
+        <div class="g-map" data-idx="2" data-cc="CN-GD,CN-GX,CN-YN,CN-FJ,CN-HI,CN-JX,CN-HN,VN,LA,TH,MM,KH"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 正面（アオイ科の身分証明書＝単体雄蕊）</button>
         <button type="button" class="g-dot" data-idx="1">② 横顔（副萼片と、昨日の花）</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>中国南部〜東南アジア（日本では古くから庭木・暖地では野生化）</b>。<br>日本では古くから庭木にされて暖地では野生化しているけれど、<b>日本は塗っていない</b>（もとの故郷じゃないから）。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 038</span><span class="st-sp">フヨウ（白花）</span><span class="st-meta">登録 2026.07.13 &middot; 夏〜秋（撮影 2023.09.22）&middot; いつも健康診断に行く病院の前</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">フヨウ（芙蓉）・白花</h2><p class="sci-name"><i>Hibiscus mutabilis</i> L.</p><p class="aka">別名 · モクフヨウ（木芙蓉）／英名 <strong>cotton rose</strong>（綿のバラ）</p><p class="family">アオイ科 &middot; Malvaceae（フヨウ属＝ハイビスカス属）</p><p class="cultivar"><span class="cv-key">燻太さんの見立て</span>「オクラ、ハイビスカス、ワタ、似ている子がいっぱい」<span class="cv-sub">……<strong>その3つ、ぜんぶ同じアオイ科。</strong>並べ方が的確すぎる</span></p></div>
@@ -68,6 +73,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

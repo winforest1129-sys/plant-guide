@@ -15,7 +15,17 @@
     <a class="back" href="004.html">次 ›</a>
   </nav>
 <article class="plate" id="p003">
-    <figure class="specimen"><div class="mount"><img src="../img/003.jpg" loading="lazy" alt="つやのあるギザギザした葉の茂みに咲く、藤色の星形の花。細長い花びらと萼が同じ色で10本のすじの星をつくり、中心に黄色い雄しべが集まる。右下にテントウムシ。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/003.jpg" loading="lazy" alt="つやのあるギザギザした葉の茂みに咲く、藤色の星形の花。細長い花びらと萼が同じ色で10本のすじの星をつくり、中心に黄色い雄しべが集まる。右下にテントウムシ。">
+        <div class="g-map" data-idx="1" data-cc="ZA"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>南部アフリカ</b>。<br>⚠出典は<b>「南部アフリカ」</b>としか言っていないので、地図は<b>南アフリカ共和国だけ</b>を塗った。ほんとうはもう少しまわりにも広がっているかもしれない。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 003</span><span class="st-sp">スイレンボク／ラベンダースターフラワー</span><span class="st-meta">登録 2026.07.11 &middot; 夏</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">スイレンボク</h2><p class="sci-name"><i>Grewia occidentalis</i> L.</p><p class="aka">別名 · ラベンダースターフラワー（流通名）／フォーコーナーズ・クロスベリー</p><p class="family">アオイ科 &middot; Malvaceae（旧シナノキ科 Tiliaceae）</p></div>
@@ -44,5 +54,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

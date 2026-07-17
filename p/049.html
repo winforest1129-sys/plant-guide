@@ -15,7 +15,17 @@
     <a class="back" href="050.html">次 ›</a>
   </nav>
 <article class="plate" id="p049">
-    <figure class="specimen"><div class="mount"><img src="../img/049.jpg" loading="lazy" alt="砂利まじりの地面に、こんもりと半球状に茂った緑の株。三つ葉（三出複葉）で、小葉は先の広い倒卵形。まだ花は咲いていない。まわりは枯れ草とコンクリートの縁。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/049.jpg" loading="lazy" alt="砂利まじりの地面に、こんもりと半球状に茂った緑の株。三つ葉（三出複葉）で、小葉は先の広い倒卵形。まだ花は咲いていない。まわりは枯れ草とコンクリートの縁。">
+        <div class="g-map" data-idx="1" data-cc="IR,TR,IQ,SY,AZ,AM,GE,PT,ES,FR,IT,GR,HR,SI,BA,ME,AL,MK,CY,LB,IL,PS,EG,LY,TN,DZ,MA"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>西アジア〜地中海地域（古代メディア＝現在のイラン北西部）</b>。<br><i>Medicago</i> ＝古代の<b>メディア</b>（いまのイラン北西部）。地図の東のはしが、名前の場所だよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 049</span><span class="st-sp">アルファルファ（ムラサキウマゴヤシ）</span><span class="st-meta">登録 2026.07.15 &middot; 初夏〜夏（撮影 2026.07.15 07:49・今朝）&middot; 道ばたの砂利地</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">アルファルファ（ムラサキウマゴヤシ／紫馬肥やし）</h2><p class="sci-name"><i>Medicago sativa</i> L.</p><p class="aka">英名 · alfalfa／lucerne ／ <i>sativa</i> ＝ ラテン語で「<strong>栽培される</strong>」</p><p class="family">マメ科 &middot; Fabaceae（ウマゴヤシ属 Medicago）</p><p class="cultivar"><span class="cv-key">燻太さんの記憶と観察</span>「マメ科の植物。<strong>刈り込まれても元気に繁っている</strong>よ」<span class="cv-sub">……<strong>その「刈られても元気」こそ、この草の正体そのものだった。</strong></span></p></div>
@@ -83,5 +93,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

@@ -15,7 +15,17 @@
     <a class="back" href="042.html">次 ›</a>
   </nav>
 <article class="plate" id="p041">
-    <figure class="specimen"><div class="mount"><img src="../img/041.jpg" loading="lazy" alt="淡いピンクのニオイゼラニウムの花のかたまり。上の二枚の花びらにだけ濃い紅紫の筋と斑が入り、下の三枚は無地。花柄と萼には毛が密生し、まわりには深く切れ込んだ、しわのある緑の葉が広がっている。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/041.jpg" loading="lazy" alt="淡いピンクのニオイゼラニウムの花のかたまり。上の二枚の花びらにだけ濃い紅紫の筋と斑が入り、下の三枚は無地。花柄と萼には毛が密生し、まわりには深く切れ込んだ、しわのある緑の葉が広がっている。">
+        <div class="g-map" data-idx="1" data-cc="ZA"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>南アフリカ（ケープ地方）</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 041</span><span class="st-sp">ニオイゼラニウム</span><span class="st-meta">登録 2026.07.14 &middot; 春〜初夏（撮影 2021.05.20・大学時代）</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ニオイゼラニウム（ローズゼラニウム）</h2><p class="sci-name"><i>Pelargonium graveolens</i> 系</p><p class="aka">センテッドゼラニウム／英名 rose geranium ── ⚠<strong>本物の「ゼラニウム属」ではない</strong></p><p class="family">フウロソウ科 &middot; Geraniaceae（<strong>テンジクアオイ属 Pelargonium</strong>）</p><p class="cultivar"><span class="cv-key">燻太さんの気づき</span>「濃いピンクの模様が独特だよね」<span class="cv-sub">……<strong>その模様は、飾りじゃない。虫への標識。</strong></span></p></div>
@@ -75,5 +85,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

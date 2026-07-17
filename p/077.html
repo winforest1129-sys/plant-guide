@@ -15,7 +15,17 @@
     <a class="back" href="078.html">次 ›</a>
   </nav>
 <article class="plate" id="p077">
-    <figure class="specimen"><div class="mount"><img src="../img/077.jpg" loading="lazy" alt="建物のわきの日かげ、茶色い鉢に植わったヤツデ。木質化した太い幹が何本もくねり、その先に、掌のように深く切れこんだ大きな光沢のある葉を放射状に広げている。切れこみは7〜9枚。うしろに白い壁と「2-6」の表札、緑の公衆電話、段ボール箱。夏の強い日ざしと濃い影。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/077.jpg" loading="lazy" alt="建物のわきの日かげ、茶色い鉢に植わったヤツデ。木質化した太い幹が何本もくねり、その先に、掌のように深く切れこんだ大きな光沢のある葉を放射状に広げている。切れこみは7〜9枚。うしろに白い壁と「2-6」の表札、緑の公衆電話、段ボール箱。夏の強い日ざしと濃い影。">
+        <div class="g-map" data-idx="1" data-cc="JP-08,JP-09,JP-10,JP-11,JP-12,JP-13,JP-14,JP-15,JP-16,JP-17,JP-18,JP-19,JP-20,JP-21,JP-22,JP-23,JP-24,JP-25,JP-26,JP-27,JP-28,JP-29,JP-30,JP-31,JP-32,JP-33,JP-34,JP-35,JP-36,JP-37,JP-38,JP-39,JP-40,JP-41,JP-42,JP-43,JP-44,JP-45,JP-46,JP-47"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>日本（関東以西の海岸近くの林に自生）</b>。<br>⭐<b>日本だけの子</b>（関東以西の海岸近くの林）。⚠だから<b>東北・北海道は塗っていない</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 077</span><span class="st-sp">ヤツデ（八手）</span><span class="st-meta">登録 2026.07.17 &middot; 常緑（花期10〜12月）&middot; 建物のわきの鉢・お散歩の道すじ</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ヤツデ（八手）</h2><p class="sci-name"><i>Fatsia japonica</i> (Thunb.) Decne. et Planch.</p><p class="aka">別名 · <strong>テングノハウチワ（天狗の羽団扇）</strong> ／ 英名 · Japanese aralia／paper plant</p><p class="family">ウコギ科 &middot; Araliaceae（ヤツデ属 <i>Fatsia</i>）<strong>── 図鑑で初めての科（42科目）</strong></p><p class="cultivar"><span class="cv-key">燻太さんの手がかりが、2つとも当たり</span>「マイナーな植物。<strong>たまに見かけるけど、ほとんどの人は名前を知らない</strong>」「<strong>切れ込み方が特徴</strong>」「花が咲いたら、<strong>白い線香花火</strong>が見れるよ」</p></div>
@@ -78,5 +88,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/054.jpg" loading="lazy" alt="白から桃色の地に、盛り上がった濃紅色のつぶつぶの斑点が散る大きなユリ。花被片は強く後ろへ反り返り、雌雄のシベが外へ長く突き出る。つぼみが上、開いた花が下、しおれた花がさらに下。">
         <img class="g-img" data-idx="1" src="../img/054b.jpg" loading="lazy" alt="木の軒とフェンスぎわに、桃色のカノコユリが何輪もまとまって咲く。うしろに青空と緑の木々。株はフェンスから軒へと伸びている。">
+        <div class="g-map" data-idx="2" data-cc="JP-36,JP-37,JP-38,JP-39,JP-40,JP-41,JP-42,JP-43,JP-44,JP-45,JP-46,CN-AH,CN-BJ,CN-CQ,CN-FJ,CN-GD,CN-GS,CN-GX,CN-GZ,CN-HA,CN-HB,CN-HE,CN-HI,CN-HL,CN-HN,CN-JL,CN-JS,CN-JX,CN-LN,CN-NM,CN-NX,CN-QH,CN-SC,CN-SD,CN-SH,CN-SN,CN-SX,CN-TJ,CN-XJ,CN-XZ,CN-YN,CN-ZJ,TW"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 花のアップ（鹿の子模様）</button>
         <button type="button" class="g-dot" data-idx="1">② 何輪も咲く姿（株全体）</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>日本（九州・四国）〜中国・台湾。野生は激減し環境省レッドリスト</b>。<br>⚠<b>野生は激減して環境省レッドリストに載っている</b>。地図の緑は「昔から自生している場所」で、<b>いま実際に咲いている場所は、これよりずっと少ない</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 054</span><span class="st-sp">カノコユリ（鹿の子百合）</span><span class="st-meta">登録 2026.07.16 &middot; 夏（撮影 2025.08.14）&middot; 軒のある庭のフェンスぎわ</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">カノコユリ（鹿の子百合）</h2><p class="sci-name"><i>Lilium speciosum</i> Thunb.</p><p class="aka">別名 · ドヨウユリ（土用百合）／タキユリ ／ 野生は絶滅危惧（環境省レッドリスト）</p><p class="family">ユリ科 &middot; Liliaceae（ユリ属）<strong>── この図鑑で初めての科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの問い</span>「こんなに鮮やかで、<strong>何輪も咲かせているのは何ていう種？</strong>」<span class="cv-sub">……<strong>この日本の野のユリが、世界の高級ユリ「カサブランカ」のお母さんだった。</strong></span></p></div>
@@ -74,6 +79,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

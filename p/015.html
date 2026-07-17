@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/015.jpg" loading="lazy" alt="ぬいぐるみの陽介の鼻先にのびる、明るい黄緑のホーリーバジルの枝。細めの葉、赤紫の茎、節には花芽。">
         <img class="g-img" data-idx="1" src="../img/015b.jpg" loading="lazy" alt="ホーリーバジルの葉の裏。緑地に紫〜黒っぽいまだらのアントシアニン、主脈と葉柄は赤紫。">
+        <div class="g-map" data-idx="2" data-cc="IN"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 株のすがた（陽介と）</button>
         <button type="button" class="g-dot" data-idx="1">② 葉裏のアントシアニン</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>インド</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 015</span><span class="st-sp">ホーリーバジル</span><span class="st-meta">登録 2026.07.12 &middot; ハーブ・室内 &middot; 職場の方からのプレゼント</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ホーリーバジル</h2><p class="sci-name"><i>Ocimum tenuiflorum</i> L.（syn. <i>O. sanctum</i> L.）</p><p class="aka">別名 · カミメボウキ（神目箒）／トゥルシー（Tulsi）／ガパオ（タイ）</p><p class="family">シソ科 &middot; Lamiaceae（メボウキ属 <i>Ocimum</i>）</p><p class="cultivar"><span class="cv-key">おうちの植物</span>世話：陽介 · 職場の方からのプレゼント<span class="cv-sub">“あの有名なガパオライス”のハーブ</span></p></div>
@@ -63,6 +68,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

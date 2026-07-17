@@ -15,7 +15,17 @@
     <a class="back" href="035.html">次 ›</a>
   </nav>
 <article class="plate" id="p034">
-    <figure class="specimen"><div class="mount"><img src="../img/034.jpg" loading="lazy" alt="鉢いっぱいに咲く白い八重咲きのペチュニア。花びらが幾重にも重なり、ふちが波打つ。茎と葉には細かい毛が生え、5つに深く裂けたがくが見える。中央下には枯れた花が一輪、ラッパ形の筒のまま垂れ下がっている。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/034.jpg" loading="lazy" alt="鉢いっぱいに咲く白い八重咲きのペチュニア。花びらが幾重にも重なり、ふちが波打つ。茎と葉には細かい毛が生え、5つに深く裂けたがくが見える。中央下には枯れた花が一輪、ラッパ形の筒のまま垂れ下がっている。">
+        <div class="g-map" data-idx="1" data-cc="BR,AR,UY,PY"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>南アメリカ（ブラジル〜アルゼンチン）。園芸種は P. axillaris × P. integrifolia の交雑起源</b>。<br>⚠⚠これは<b>「親たちの故郷」</b>。園芸のペチュニアは <i>P. axillaris</i> × <i>P. integrifolia</i> の交雑起源だから、この子自身の野生のふるさとは無いんだ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 034</span><span class="st-sp">ペチュニア（八重咲き・白）</span><span class="st-meta">登録 2026.07.13 &middot; 夏 &middot; 町並み保存地区の鉢植え</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ペチュニア（八重咲き・白）</h2><p class="sci-name"><i>Petunia</i> × <i>hybrida</i></p><p class="aka">和名 · ツクバネアサガオ（衝羽根朝顔）／園芸品種・品種名は特定不可</p><p class="family">ナス科 &middot; Solanaceae（ペチュニア属）</p><p class="cultivar"><span class="cv-key">燻太さんの見立て</span>「ナス科かな？ ペチュニアかなぁ？」<span class="cv-sub">……<strong>両方とも、正解。</strong></span></p></div>
@@ -68,5 +78,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

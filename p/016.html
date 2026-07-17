@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/016.jpg" loading="lazy" alt="素焼き鉢に植わった球形の王冠竜。青緑の肌に太く丸い稜、わら色の長い刺が放射状に密生。となりに黒いクマのぬいぐるみ・星太郎が伏せて寄り添う。">
         <img class="g-img" data-idx="1" src="../img/016b.jpg" loading="lazy" alt="王冠竜の頭上アップ。成長点は白いふわふわの綿毛に覆われ、新しい刺座と刺が次々と出ている。濃い青緑の肌に青白いブルームと水滴。">
+        <div class="g-map" data-idx="2" data-cc="MX"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 星太郎さんと</button>
         <button type="button" class="g-dot" data-idx="1">② 頭上（成長点アップ）</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>メキシコ</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 016</span><span class="st-sp">王冠竜（オウカンリュウ）</span><span class="st-meta">登録 2026.07.12 &middot; サボテン・室内 &middot; 成長記録</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">王冠竜</h2><p class="sci-name"><i>Ferocactus glaucescens</i> (DC.) Britton &amp; Rose</p><p class="aka">別名 · 青王冠竜／フェロカクタス・グラウケスケンス</p><p class="family">サボテン科 &middot; Cactaceae（フェロカクタス属＝強刺類）</p><p class="cultivar"><span class="cv-key">おうちの植物</span>世話：陽介 · 星太郎さんの相棒<span class="cv-sub">まるっこいのに、迂闊に近づくと噛みつく</span></p></div>
@@ -63,6 +68,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

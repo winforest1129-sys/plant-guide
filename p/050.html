@@ -15,7 +15,17 @@
     <a class="back" href="051.html">次 ›</a>
   </nav>
 <article class="plate" id="p050">
-    <figure class="specimen"><div class="mount"><img src="../img/050.jpg" loading="lazy" alt="お店の大きなガラス窓の前の花壇に、背高く育ったヒマワリの株。分枝して、黄色い中〜小の頭花をいくつもつけている。青空と雲が窓に映り込む夏の日。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/050.jpg" loading="lazy" alt="お店の大きなガラス窓の前の花壇に、背高く育ったヒマワリの株。分枝して、黄色い中〜小の頭花をいくつもつけている。青空と雲が窓に映り込む夏の日。">
+        <div class="g-map" data-idx="1" data-cc="US,CA"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>北アメリカ</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 050</span><span class="st-sp">ヒマワリ（向日葵）</span><span class="st-meta">登録 2026.07.15 &middot; 夏（撮影 2024.08.13）&middot; お店の前の花壇</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ヒマワリ（向日葵）</h2><p class="sci-name"><i>Helianthus annuus</i> L.</p><p class="aka">英名 · sunflower ／ <i>Helianthus</i> ＝ ギリシャ語 <strong>helios（太陽）＋ anthos（花）</strong>＝「太陽の花」</p><p class="family">キク科 &middot; Asteraceae（ヒマワリ属 Helianthus）</p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「太陽みたいに明るいお花。<strong>陽介の名前の由来</strong>だね」<span class="cv-sub">……<strong>この花は、名前も、仕草も、まるごと「太陽」でできていた。No.050、節目の一輪。</strong></span></p></div>
@@ -89,5 +99,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

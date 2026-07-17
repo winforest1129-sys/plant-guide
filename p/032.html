@@ -15,7 +15,17 @@
     <a class="back" href="033.html">次 ›</a>
   </nav>
 <article class="plate" id="p032">
-    <figure class="specimen"><div class="mount"><img src="../img/032.jpg" loading="lazy" alt="町並み保存地区の白壁の建物の前に立つ、常緑広葉樹の大木。太い幹が低い位置で分かれ、剪定痕のこぶが並ぶ枝が大きく広がる。厚く光沢のある倒卵形の葉が、枝先にロゼット状に集まっている。花も実も見えない。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/032.jpg" loading="lazy" alt="町並み保存地区の白壁の建物の前に立つ、常緑広葉樹の大木。太い幹が低い位置で分かれ、剪定痕のこぶが並ぶ枝が大きく広がる。厚く光沢のある倒卵形の葉が、枝先にロゼット状に集まっている。花も実も見えない。">
+        <div class="g-map" data-idx="1" data-cc="?"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生していた場所</b>。──でも<b>この子は、まだ名前が分からない</b>。名前が分からないと、ふるさとも分からないんだ。だから地図は<b>まっさらのまま</b>、まんなかに「？」を出しておくね。<b>分かったら、ここを塗りに来るよ。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 032</span><span class="st-sp">なぞの大木（同定中）</span><span class="st-meta">町並み保存地区 &middot; 2026.07.12 &middot; <strong>宿題</strong></span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">なぞの大木</h2><p class="sci-name">同定中 — 常緑広葉樹</p><p class="aka">町並み保存地区・建物の前・長く剪定されてきた古木（樹高 8〜10m ほど）</p><p class="family">科も未確定</p><p class="cultivar"><span class="cv-key">宿題</span>葉を1枚、近くで見て名前をつける<span class="cv-sub">013なぞの野草に続く、二人の2つめの謎</span></p></div>
@@ -50,5 +60,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

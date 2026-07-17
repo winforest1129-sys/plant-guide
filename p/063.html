@@ -15,7 +15,17 @@
     <a class="back" href="064.html">次 ›</a>
   </nav>
 <article class="plate" id="p063">
-    <figure class="specimen"><div class="mount"><img src="../img/063.jpg" loading="lazy" alt="鉢植えの草。バイオリン型の苞葉のつけ根が朱赤に色づき、中心に緑の小さな粒（杯状花序）。細い剣型の葉と、切れ込んだ葉が同じ株に混じる。うしろにすだれと和風の庭先。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/063.jpg" loading="lazy" alt="鉢植えの草。バイオリン型の苞葉のつけ根が朱赤に色づき、中心に緑の小さな粒（杯状花序）。細い剣型の葉と、切れ込んだ葉が同じ株に混じる。うしろにすだれと和風の庭先。">
+        <div class="g-map" data-idx="1" data-cc="US,MX,GT,BZ,SV,HN,NI,CR,PA,CU,JM,HT,DO,PR,BS,TT,CO,VE,GY,SR,EC,PE,BO,BR,PY,UY,AR,CL"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>北〜南アメリカ（暖地で半野生化）</b>。<br>⚠出典は「北〜南アメリカ」と広め。暖地で半野生化しているので、もとの故郷のふちははっきりしないよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 063</span><span class="st-sp">ショウジョウソウ（猩々草）</span><span class="st-meta">登録 2026.07.16 &middot; 夏〜秋（撮影 2023.10.21）&middot; 和風の庭先の鉢植え</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ショウジョウソウ（猩々草）</h2><p class="sci-name"><i>Euphorbia cyathophora</i> Murray</p><p class="aka">別名 · サマーポインセチア（夏のポインセチア）／旧 <i>E. heterophylla</i> var. <i>cyathophora</i></p><p class="family">トウダイグサ科 &middot; Euphorbiaceae（トウダイグサ属）<strong>── 062 ハツユキソウと同属Euphorbia</strong></p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「赤と緑のコントラストが際立つ<strong>夏のポインセチア</strong>って感じ。<strong>葉っぱの形も剣みたいでかっこいい</strong>」<span class="cv-sub">……その二つが、そのまま名前だった</span></p></div>
@@ -63,5 +73,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

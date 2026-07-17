@@ -15,6 +15,17 @@
     .then(function (svg) {
       Array.prototype.forEach.call(slots, function (el) {
         el.innerHTML = svg;
+        /* data-cc="?" ＝ 名前が分からない子。塗らずに、まんなかに大きな「？」を出す。
+           （「出さない」んじゃなくて「分からない」ことを見せる＝図鑑の「宿題」の席と同じ考え） */
+        if ((el.getAttribute("data-cc") || "").trim() === "?") {
+          el.classList.add("unknown");
+          var q = document.createElement("div");
+          q.className = "g-map-unknown";
+          q.setAttribute("aria-label", "原産地は分かっていない");
+          q.textContent = "？";
+          el.appendChild(q);
+          return;
+        }
         var missing = [];
         (el.getAttribute("data-cc") || "").split(",").forEach(function (cc) {
           cc = cc.trim();

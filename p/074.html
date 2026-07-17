@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/074.jpg" loading="lazy" alt="霧ヶ峰の草原。刈られた草地に、鮮やかな黄色いニッコウキスゲが一輪、横向きに開いている。花被は6枚、雄しべ6本。右に、ずんぐりしたつぼみをかたまりで付けた花茎が立つ。うしろに白いロープの柵が横に走り、その先も草原。">
         <img class="g-img" data-idx="1" src="../img/074b.jpg" loading="lazy" alt="ニッコウキスゲの株全体。細長い葉の株元から、花茎が何本も放射状に伸び、それぞれに数輪の黄色い花とつぼみを付けている。よじれてしおれた前日の花もいくつか残る。左下に、写真を撮る人の手が写り込む。">
+        <div class="g-map" data-idx="2" data-cc="JP-01,JP-02,JP-03,JP-04,JP-05,JP-06,JP-07,JP-08,JP-09,JP-10,JP-11,JP-12,JP-13,JP-14,JP-15,JP-16,JP-17,JP-18,JP-19,JP-20,JP-21,JP-22,JP-23,JP-24,JP-25,JP-26,JP-27,JP-28,JP-29,JP-30"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 一輪（柵の中で）</button>
         <button type="button" class="g-dot" data-idx="1">② 株の全体（昨日の花も）</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>北海道〜本州近畿地方以北（海抜1000m以上の高地）</b>。<br>⚠⚠<b>ここがいちばん、地図がうそをつくところ</b>。この子は<b>海抜1000m以上の高地</b>の子だから、塗った県の<b>山の上にしかいない</b>。平地は緑でも、いないんだ。<b>地図は「県」までしか塗れない</b>——高さは塗れない。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 074</span><span class="st-sp">ニッコウキスゲ（ゼンテイカ）</span><span class="st-meta">登録 2026.07.16 &middot; 夏 &middot; <strong>霧ヶ峰</strong>（撮影 2017.07.02 13:01・<strong>図鑑で最も古い写真</strong>）</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ニッコウキスゲ（ゼンテイカ）</h2><p class="sci-name"><i>Hemerocallis middendorffii</i> Trautv. et C.A.Mey. var. <i>esculenta</i> (Koidz.) Ohwi</p><p class="aka">正式な和名 · <strong>ゼンテイカ（禅庭花）</strong>／ニッコウキスゲは通称 ／ 英名 · daylily</p><p class="family">ツルボラン科 &middot; Asphodelaceae（ワスレグサ亜科 <i>Hemerocallidoideae</i>／和名は<strong>ワスレグサ科</strong>とも／<strong>2009年まではユリ科</strong>）</p><p class="cultivar"><span class="cv-key">図鑑で初めての「保全の記録」</span>燻太さんが<strong>他の研究室のお手伝いで、種から苗を育てて、生息地に植えに行った</strong>草原<span class="cv-sub">──ただし、この写真に咲いているのは<strong>別の人が植えた株</strong>。燻太さんの株は、この日はまだ咲いていない</span></p></div>
@@ -94,6 +99,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

@@ -15,7 +15,17 @@
     <a class="back" href="047.html">次 ›</a>
   </nav>
 <article class="plate" id="p046">
-    <figure class="specimen"><div class="mount"><img src="../img/046.jpg" loading="lazy" alt="真っ赤なサルビア。上向きに立つ花穂に、赤とクリーム色の筋が入ったふねの形の萼が段々に積み上がり、そのすきまから淡いサーモンピンクの細長い筒状の花冠が横向きに突き出している。下には四角い茎と、十字に向かい合う大きなハート形の葉。石垣と木道が背景。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/046.jpg" loading="lazy" alt="真っ赤なサルビア。上向きに立つ花穂に、赤とクリーム色の筋が入ったふねの形の萼が段々に積み上がり、そのすきまから淡いサーモンピンクの細長い筒状の花冠が横向きに突き出している。下には四角い茎と、十字に向かい合う大きなハート形の葉。石垣と木道が背景。">
+        <div class="g-map" data-idx="1" data-cc="BR"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>ブラジル南東部</b>。<br>⭐<b>ブラジル南東部だけ</b>。夏の花壇でいちばん赤いあの子は、じつはとてもせまい場所の生まれだよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 046</span><span class="st-sp">サルビア</span><span class="st-meta">登録 2026.07.14 &middot; 夏〜秋（撮影 2026.07.14 17:56）&middot; 港の横の花壇</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">サルビア（ヒゴロモソウ／緋衣草）</h2><p class="sci-name"><i>Salvia splendens</i> Sellow ex Wied-Neuw.</p><p class="aka">英名 · scarlet sage ／ <i>splendens</i> ＝ ラテン語で「<strong>輝く</strong>」</p><p class="family">シソ科 &middot; Lamiaceae（<strong>アキギリ属 Salvia</strong>）</p><p class="cultivar"><span class="cv-key">燻太さんの見立て</span>「シソ科っぽい風貌だけど、匂いを確認したことはないかも」<span class="cv-sub">……<strong>シソ科は大正解。そして「匂いがない」ことこそ、この子の物語だった。</strong></span></p></div>
@@ -108,5 +118,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

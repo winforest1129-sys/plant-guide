@@ -15,7 +15,17 @@
     <a class="back" href="002.html">次 ›</a>
   </nav>
 <article class="plate" id="p001">
-    <figure class="specimen"><div class="mount"><img src="../img/001.jpg" loading="lazy" alt="逆光にかがやくトマトの花。黄色い星形の花びらと、中央の黄色い雄しべの筒、毛におおわれた茎と葉。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/001.jpg" loading="lazy" alt="逆光にかがやくトマトの花。黄色い星形の花びらと、中央の黄色い雄しべの筒、毛におおわれた茎と葉。">
+        <div class="g-map" data-idx="1" data-cc="PE,EC"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>南米アンデス地方（ペルー〜エクアドルあたり）。栽培化はメキシコ</b>。<br>この地図は<b>野生のトマトのふるさと</b>。<b>畑のトマトになったのはメキシコ</b>で、そこは塗っていないよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 001</span><span class="st-sp">トマト（マイクロトム）</span><span class="st-meta">登録 2026.07.11 &middot; 夏</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">トマト</h2><p class="sci-name"><i>Solanum lycopersicum</i> L.</p><p class="family">ナス科 &middot; Solanaceae</p><p class="cultivar"><span class="cv-key">品種</span>マイクロトム（Micro-Tom）<span class="cv-sub">研究用のモデル矮性品種</span></p></div>
@@ -41,5 +51,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

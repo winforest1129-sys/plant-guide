@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/057.jpg" loading="lazy" alt="白い5枚の花びらの中心に、あざやかなピンクの星（目）を持つ花。花壇のレンガの縁ぎわ、雨のしずくをのせて咲く。光沢のある対生の葉。">
         <img class="g-img" data-idx="1" src="../img/057b.jpg" loading="lazy" alt="白い花が群れて何輪も咲く姿。それぞれの中心にピンクの星。雨あがりで花びらにしずく。うしろに赤ジソの穂と、くもり空。">
+        <div class="g-map" data-idx="2" data-cc="MG"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 真ん中のピンクの星（アップ）</button>
         <button type="button" class="g-dot" data-idx="1">② 毎日ぽんぽん咲く群れ</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>マダガスカル（世界の熱帯で栽培・帰化）</b>。<br>⭐<b>マダガスカルだけ</b>。世界じゅうの花壇にいるのに、野生のふるさとはこの島ひとつ。<b>抗がん剤（ビンクリスチン）は、この島の子から出てきた</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 057</span><span class="st-sp">ニチニチソウ（日日草）</span><span class="st-meta">登録 2026.07.16 &middot; 夏〜秋（撮影 2025.09.10）&middot; 花壇のレンガの縁</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ニチニチソウ（日日草）</h2><p class="sci-name"><i>Catharanthus roseus</i> (L.) G.Don</p><p class="aka">別名 · ニチニチカ ／ 旧属名 <i>Vinca rosea</i> ／ 原産マダガスカル</p><p class="family">キョウチクトウ科 &middot; Apocynaceae（ニチニチソウ属）<strong>── 045 ブルースター・051 ガガイモと同じ科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「真ん中のピンクの星が特徴的で、<strong>毎日ぽんぽん咲いてるね</strong>」<span class="cv-sub">……<strong>その星は蜜への案内板。そしてこの花壇の花は、抗がん剤の原料。</strong></span></p></div>
@@ -67,6 +72,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

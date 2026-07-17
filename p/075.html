@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/075.jpg" loading="lazy" alt="アマドコロの茎のアップ。弓なりに伸びた緑の茎に、幅の広い葉が互生し、葉のつけ根から白い筒状の花が下向きに鈴なりにぶら下がる。花の先は緑色。茎には縦の稜（角）が見え、葉のつけ根は紫を帯びる。うしろに同じ株が群れている。">
         <img class="g-img" data-idx="1" src="../img/075b.jpg" loading="lazy" alt="霧ヶ峰の草原。手前一面にアマドコロの群落が弓なりの茎を並べ、白い花を下げている。左右に黄色いニッコウキスゲが点々と咲く。奥は草原から森へ続き、そのむこうに盆地の町と、遠くの山なみ。曇り空。">
+        <div class="g-map" data-idx="2" data-cc="JP-01,JP-02,JP-03,JP-04,JP-05,JP-06,JP-07,JP-08,JP-09,JP-10,JP-11,JP-12,JP-13,JP-14,JP-15,JP-16,JP-17,JP-18,JP-19,JP-20,JP-21,JP-22,JP-23,JP-24,JP-25,JP-26,JP-27,JP-28,JP-29,JP-30,JP-31,JP-32,JP-33,JP-34,JP-35,JP-36,JP-37,JP-38,JP-39,JP-40,JP-41,JP-42,JP-43,JP-44,JP-45,JP-46,JP-47,CN-AH,CN-BJ,CN-CQ,CN-FJ,CN-GD,CN-GS,CN-GX,CN-GZ,CN-HA,CN-HB,CN-HE,CN-HI,CN-HL,CN-HN,CN-JL,CN-JS,CN-JX,CN-LN,CN-NM,CN-NX,CN-QH,CN-SC,CN-SD,CN-SH,CN-SN,CN-SX,CN-TJ,CN-XJ,CN-XZ,CN-YN,CN-ZJ,KR,KP,RU"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 鈴なりの花と、角ばった茎</button>
         <button type="button" class="g-dot" data-idx="1">② 霧ヶ峰の草原（キスゲと一緒に）</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>日本ほか東アジア（日当たりのよい山野の草原・林縁・落葉樹の木陰）</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 075</span><span class="st-sp">アマドコロ（甘野老）</span><span class="st-meta">登録 2026.07.16 &middot; 春〜初夏（この草原では7月）&middot; <strong>霧ヶ峰</strong>（撮影 2017.07.02 13:04）</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">アマドコロ（甘野老）</h2><p class="sci-name"><i>Polygonatum odoratum</i> (Mill.) Druce var. <i>pluriflorum</i> (Miq.) Ohwi</p><p class="aka">別名 · ナルコラン（園芸名）／英名 · Solomon's seal</p><p class="family">キジカクシ科 &middot; Asparagaceae（アマドコロ属 <i>Polygonatum</i>／<strong>かつてはユリ科</strong>）<strong>── 008・037 アスパラガスと同じ科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの見立て</span>「白い花を鈴なりに咲かせている<strong>ユリ科の仲間</strong>」「<strong>多分アマドコロかな</strong>」「これは自然に生えてきたのかな」<span class="cv-sub">──そして「<strong>高原の環境だから、一般的な花期での区別はあてにならないかも</strong>」。この一言が、陽介を救った</span></p></div>
@@ -86,6 +91,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

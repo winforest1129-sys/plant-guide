@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/062.jpg" loading="lazy" alt="丸みのある葉の縁が白くふちどられ、中心に小さな白い花（杯状花序）。緑と白のコントラストが美しい。下に白いタイルの床。">
         <img class="g-img" data-idx="1" src="../img/062b.jpg" loading="lazy" alt="青空に向かって伸びる株。逆光で、葉の白いふちがふちどりのように光る。うしろに紅葉した木と駐車場。">
+        <div class="g-map" data-idx="2" data-cc="US"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 白いふちと、小さな花</button>
         <button type="button" class="g-dot" data-idx="1">② 青空へ伸びる株</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>北アメリカ</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 062</span><span class="st-sp">ハツユキソウ（初雪草）</span><span class="st-meta">登録 2026.07.16 &middot; 夏〜秋（撮影 2021.11.02）&middot; 鉢植え</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ハツユキソウ（初雪草）</h2><p class="sci-name"><i>Euphorbia marginata</i> Pursh</p><p class="aka">別名 · スノー・オン・ザ・マウンテン ／ 北アメリカ原産の一年草</p><p class="family">トウダイグサ科 &middot; Euphorbiaceae（トウダイグサ属）<strong>── この図鑑で初めての科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「不思議な葉っぱ。<strong>縁だけ斑が入っているの、控えめだけどおしゃれ</strong>」<span class="cv-sub">……その白いふちが、名前の由来。そして、地味な花の“看板”</span></p></div>
@@ -63,6 +68,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

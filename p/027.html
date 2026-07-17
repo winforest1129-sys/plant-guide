@@ -15,7 +15,17 @@
     <a class="back" href="028.html">次 ›</a>
   </nav>
 <article class="plate" id="p027">
-    <figure class="specimen"><div class="mount"><img src="../img/027.jpg" loading="lazy" alt="板塀の前に植わったニオイバンマツリの低木。明るい黄緑の葉のあいだに、5裂した淡い紫の花と、色のぬけた白い花が同時に咲いている。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/027.jpg" loading="lazy" alt="板塀の前に植わったニオイバンマツリの低木。明るい黄緑の葉のあいだに、5裂した淡い紫の花と、色のぬけた白い花が同時に咲いている。">
+        <div class="g-map" data-idx="1" data-cc="BR,AR,PY"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>南アメリカ（ブラジル南部〜アルゼンチン・パラグアイ／大西洋岸森林）</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 027</span><span class="st-sp">ニオイバンマツリ</span><span class="st-meta">登録 2026.07.13 &middot; 夏 &middot; 町並み保存地区で（燻太さんの好きなお花）</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ニオイバンマツリ（匂蕃茉莉）</h2><p class="sci-name"><i>Brunfelsia australis</i> Benth.</p><p class="aka">別名 · ブルンフェルシア／英名 yesterday-today-and-tomorrow（昨日・今日・明日）</p><p class="family">ナス科 &middot; Solanaceae（ブルンフェルシア属）</p><p class="cultivar"><span class="cv-key">燻太さんの好きなお花</span>淡い紫と白のコントラスト<span class="cv-sub">……じつは、同じ花の「今日」と「一昨日」</span></p></div>
@@ -44,5 +54,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

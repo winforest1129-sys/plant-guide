@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/065.jpg" loading="lazy" alt="橙色に黒い斑点の大きな花。花被片が強く後ろへ反り返り、雄しべが長く突き出る。茎の葉のつけ根に、黒紫の粒（ムカゴ）が並ぶ。街の歩道ぎわ。">
         <img class="g-img" data-idx="1" src="../img/065b.jpg" loading="lazy" alt="すっと立った一本の茎。上に反り返った橙色の虎斑の花、茎の葉腋に沿って黒紫のムカゴがびっしり並ぶ。歩道と青空。">
+        <div class="g-map" data-idx="2" data-cc="JP-01,JP-02,JP-03,JP-04,JP-05,JP-06,JP-07,JP-08,JP-09,JP-10,JP-11,JP-12,JP-13,JP-14,JP-15,JP-16,JP-17,JP-18,JP-19,JP-20,JP-21,JP-22,JP-23,JP-24,JP-25,JP-26,JP-27,JP-28,JP-29,JP-30,JP-31,JP-32,JP-33,JP-34,JP-35,JP-36,JP-37,JP-38,JP-39,JP-40,JP-41,JP-42,JP-43,JP-44,JP-45,JP-46,JP-47,CN-AH,CN-BJ,CN-CQ,CN-FJ,CN-GD,CN-GS,CN-GX,CN-GZ,CN-HA,CN-HB,CN-HE,CN-HI,CN-HL,CN-HN,CN-JL,CN-JS,CN-JX,CN-LN,CN-NM,CN-NX,CN-QH,CN-SC,CN-SD,CN-SH,CN-SN,CN-SX,CN-TJ,CN-XJ,CN-XZ,CN-YN,CN-ZJ,KR,KP"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 花とムカゴ</button>
         <button type="button" class="g-dot" data-idx="1">② 茎いっぱいのムカゴ</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>東アジア（日本・中国・朝鮮半島）。古くから栽培・半野生化</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 065</span><span class="st-sp">オニユリ（鬼百合）</span><span class="st-meta">登録 2026.07.16 &middot; 夏 &middot; 街の歩道ぎわ</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">オニユリ（鬼百合）</h2><p class="sci-name"><i>Lilium lancifolium</i> Thunb.（= <i>L. tigrinum</i>）</p><p class="aka">別名 · タイガーリリー（虎百合）／英名 tiger lily</p><p class="family">ユリ科 &middot; Liliaceae（ユリ属）<strong>── 054 カノコユリと同じユリ属・ユリシリーズ第2弾</strong></p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「<strong>ユリシリーズ第2弾</strong>いこうか」<span class="cv-sub">……種を作れないのに、茎いっぱいの“ムカゴ”で殖える子</span></p></div>
@@ -70,6 +75,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

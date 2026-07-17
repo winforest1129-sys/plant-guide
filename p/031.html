@@ -15,7 +15,17 @@
     <a class="back" href="032.html">次 ›</a>
   </nav>
 <article class="plate" id="p031">
-    <figure class="specimen"><div class="mount"><img src="../img/031.jpg" loading="lazy" alt="古い板塀の前に立てた支柱に、フウセンカズラのつるが巻きひげでからみつき、緑のカーテンのように茂っている。こまかく切れ込んだ葉のあいだに、三つの稜がある淡緑色の風船のような果実がいくつもぶら下がる。足もとには鉢。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/031.jpg" loading="lazy" alt="古い板塀の前に立てた支柱に、フウセンカズラのつるが巻きひげでからみつき、緑のカーテンのように茂っている。こまかく切れ込んだ葉のあいだに、三つの稜がある淡緑色の風船のような果実がいくつもぶら下がる。足もとには鉢。">
+        <div class="g-map" data-idx="1" data-cc="MX,GT,BZ,SV,HN,NI,CR,PA,CU,JM,HT,DO,PR,BS,TT,CO,VE,GY,SR,EC,PE,BO,BR,PY,SN,GM,GW,GN,SL,LR,CI,GH,TG,BJ,NG,CM,GQ,GA,CG,CD,CF,AO,ZM,MW,MZ,TZ,KE,UG,RW,BI,ET,SS,SD,MG,IN,LK,BD,MM,TH,LA,VN,KH,MY,ID,PH,BN,TL,PG,SB,VU,FJ,NC"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>熱帯・亜熱帯に広く（汎熱帯）。日本には園芸・帰化</b>。<br>⭐<b>「広い」ことじたいが、この子の情報</b>。汎熱帯＝熱帯・亜熱帯にぐるりと広く。日本には園芸・帰化で来たよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 031</span><span class="st-sp">フウセンカズラ</span><span class="st-meta">登録 2026.07.13 &middot; 夏 &middot; 029コエビソウと同じ板塀の軒先（その2分後）</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">フウセンカズラ（風船葛）</h2><p class="sci-name"><i>Cardiospermum halicacabum</i> L.</p><p class="aka">英名 · balloon vine（風船のつる）／<strong>love-in-a-puff</strong>（ふくらみの中の、愛）</p><p class="family">ムクロジ科 &middot; Sapindaceae（フウセンカズラ属）</p><p class="cultivar"><span class="cv-key">燻太さんの問い</span>「なんでこんな形なのかな」<span class="cv-sub">「もっと大きな風船をつける植物もいた気がする」</span></p></div>
@@ -60,5 +70,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

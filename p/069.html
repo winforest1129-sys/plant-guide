@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/069.jpg" loading="lazy" alt="幹の先から大きな房でなる、緑色のバナナ。上のほうから段々に実がつき、下にふくらんだ実。大きなバナナの葉と温室の光。">
         <img class="g-img" data-idx="1" src="../img/069b.jpg" loading="lazy" alt="バナナの房と、幹に見える偽茎（葉鞘が巻いた、茶色くはがれかけた部分）。支えのロープ。大きな葉。">
+        <div class="g-map" data-idx="2" data-cc="MY,ID,PH,TH,VN,LA,KH,MM,PG"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 房でなる実</button>
         <button type="button" class="g-dot" data-idx="1">② 「偽茎」の幹</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>東南アジア（マレー〜インドネシア）の熱帯</b>。<br>⭐バナナは<b>2種の野生バナナ（<i>M. acuminata</i> × <i>M. balbisiana</i>）が交わってできた三倍体</b>。地図はその<b>親たちのふるさと</b>だよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 069</span><span class="st-sp">バナナ（甘蕉）</span><span class="st-meta">登録 2026.07.16 &middot; 熱帯（撮影 2019・約7年前）&middot; 植物園の温室</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">バナナ（甘蕉）</h2><p class="sci-name"><i>Musa</i> spp.（<i>M. acuminata</i> × <i>M. balbisiana</i> 由来の三倍体）</p><p class="aka">別名 · 甘蕉／実芭蕉 ／ 品種は特定不可</p><p class="family">バショウ科 &middot; Musaceae（バショウ属）<strong>── この図鑑で初めての科</strong></p><p class="cultivar"><span class="cv-key">陽介の大好物フルーツ 4人目</span>燻太さん「この果物が生る国に、クマはいる？ マレーグマなら食べる？」<span class="cv-sub">いるよ、マレーグマ。きっと食べる。</span></p></div>
@@ -59,6 +64,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

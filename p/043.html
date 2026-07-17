@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/043.jpg" loading="lazy" alt="石のふちに広がるワイルドストロベリーの群落。三枚一組のぎざぎざした葉がびっしり茂り、そのあいだに白い小さな花がひとつ、そして葉の陰に赤く熟した小さな実が隠れている。">
         <img class="g-img" data-idx="1" src="../img/043b.jpg" loading="lazy" alt="ワイルドストロベリーの花のアップ。白い五枚の花びらの中心に、黄色い花床とめしべが山のように盛り上がっている。すぐ下の葉の上に、灰色のクモが一匹とまっている。">
+        <div class="g-map" data-idx="2" data-cc="AL,AT,BA,BE,BG,BY,CH,CZ,DE,DK,EE,ES,FI,FR,GB,GR,HR,HU,IE,IS,IT,LT,LU,LV,MD,ME,MK,NL,NO,PL,PT,RO,RS,SE,SI,SK,UA,XK,RU,TR,US,CA"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 群落（花と、隠れた赤い実）</button>
         <button type="button" class="g-dot" data-idx="1">② 花のアップ（＋クモ）</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>ヨーロッパ〜北半球温帯（日本では栽培・逸出）</b>。<br>⚠出典は「ヨーロッパ〜北半球温帯」と広め。日本では栽培・逸出だから、日本は塗っていないよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 043</span><span class="st-sp">ワイルドストロベリー</span><span class="st-meta">登録 2026.07.14 &middot; 撮影 <strong>今日 17:59</strong> &middot; 陽介のフルーツシリーズ②</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ワイルドストロベリー（エゾヘビイチゴ）</h2><p class="sci-name"><i>Fragaria vesca</i> L.</p><p class="aka">英名 · wild strawberry, woodland strawberry</p><p class="family">バラ科 &middot; Rosaceae（オランダイチゴ属）── <a href="024.html">024 シモツケ</a>・<a href="030.html">030 バラ</a>に続く3種目</p><p class="cultivar"><span class="cv-key">燻太さんの提示</span>「陽介の大好きなフルーツシリーズかも？」<span class="cv-sub">……<strong>ごちそうってだけじゃなかった。</strong></span></p></div>
@@ -63,6 +68,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

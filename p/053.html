@@ -15,7 +15,17 @@
     <a class="back" href="054.html">次 ›</a>
   </nav>
 <article class="plate" id="p053">
-    <figure class="specimen"><div class="mount"><img src="../img/053.jpg" loading="lazy" alt="木陰の湿った茂みに咲く数輪の白い花。花びらのふちは糸のように細かく裂けてフリル状。白地に青紫の斑点が散り、中心にオレンジ色のとさか模様。すっと立った剣のような細い葉。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/053.jpg" loading="lazy" alt="木陰の湿った茂みに咲く数輪の白い花。花びらのふちは糸のように細かく裂けてフリル状。白地に青紫の斑点が散り、中心にオレンジ色のとさか模様。すっと立った剣のような細い葉。">
+        <div class="g-map" data-idx="1" data-cc="CN-AH,CN-BJ,CN-CQ,CN-FJ,CN-GD,CN-GS,CN-GX,CN-GZ,CN-HA,CN-HB,CN-HE,CN-HI,CN-HL,CN-HN,CN-JL,CN-JS,CN-JX,CN-LN,CN-NM,CN-NX,CN-QH,CN-SC,CN-SD,CN-SH,CN-SN,CN-SX,CN-TJ,CN-XJ,CN-XZ,CN-YN,CN-ZJ"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>中国（日本へは大昔に持ち込まれた史前帰化植物）</b>。<br>⭐<b>日本は塗っていない</b>。この子は<b>史前帰化植物</b>＝<b>文字より前に、人が中国から持ってきた</b>と考えられている。だれが運んだのか、記録が残っていないんだ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 053</span><span class="st-sp">シャガ（射干・著莪）</span><span class="st-meta">登録 2026.07.16 &middot; 春（撮影 2025.05.05）&middot; 木陰の湿ったフェンスぎわ</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">シャガ（射干・著莪）</h2><p class="sci-name"><i>Iris japonica</i> Thunb.</p><p class="aka">別名 · 胡蝶花（こちょうか・中国名）／著莪 ／ 原産は中国（史前帰化）</p><p class="family">アヤメ科 &middot; Iridaceae（アヤメ属）<strong>── この図鑑で初めての科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「自分が大好きな花。<strong>木陰の湿っている場所で、綺麗な模様のドレスを纏ってる</strong>」<span class="cv-sub">……<strong>その“ドレス”のヒラヒラには、めしべの化けたものも混じっている。そして、この花は種を残せない。</strong></span></p></div>
@@ -62,5 +72,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

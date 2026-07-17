@@ -176,8 +176,17 @@
   /* 原産地マップ（写真と同じギャラリーの1枚として切り替える） */
   .gallery .g-map{display:none}
   .gallery .g-map.show{display:block}
-  .g-map{background:var(--panel);border-radius:2px;padding:8px 6px}
+  .g-map{background:var(--panel);border-radius:2px;padding:8px 6px;position:relative}
   .g-map svg{width:100%;height:auto;display:block}
+  /* 名前の分からない子＝塗らない。でも「分からない」ことは見せる（燻太さんの決定）。
+     世界地図はうすくして、まんなかに大きな「？」を出す。 */
+  .g-map.unknown svg{opacity:.38}
+  .g-map-unknown{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--label);font-size:clamp(46px,16vw,104px);font-weight:700;line-height:1;
+    color:var(--range-edge);text-shadow:0 0 var(--range-blur) var(--range-glow-hi);
+    pointer-events:none;animation:unknownGlow 3.2s ease-in-out infinite}
+  @keyframes unknownGlow{ 0%,100%{opacity:.62} 50%{opacity:1} }
+  @media (prefers-reduced-motion: reduce){ .g-map-unknown{animation:none;opacity:.9} }
   .g-map .c{fill:var(--paper-2);stroke:var(--line-strong);stroke-width:.6;vector-effect:non-scaling-stroke}
   /* 分布は「明るい緑でゆっくり光る」（燻太さんのリクエスト）。
      色はテーマに依らず一定の明るい緑＝どちらの地の色でも浮く。 */

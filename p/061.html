@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/061.jpg" loading="lazy" alt="濃い桃色の八重の花が、こんもりと房になって咲く。まわりは竹のような細長い革質の葉。うしろに街路と赤い車。">
         <img class="g-img" data-idx="1" src="../img/061b.jpg" loading="lazy" alt="細長い葉が茎に3枚ずつ輪になってつく（3輪生）。桃色の花と、らせん状に並ぶ赤いつぼみ。街なかの植え込み。">
+        <div class="g-map" data-idx="2" data-cc="PT,ES,FR,IT,GR,HR,SI,BA,ME,AL,MK,TR,CY,SY,LB,IL,PS,EG,LY,TN,DZ,MA,IQ,IR,AF,PK,IN"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 八重の花房</button>
         <button type="button" class="g-dot" data-idx="1">② 3枚輪生の葉とつぼみ</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>地中海〜西アジア（インド）。日本へは江戸中期に渡来</b>。<br>日本へは江戸中期に来た子だから、日本は塗っていないよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 061</span><span class="st-sp">キョウチクトウ（夾竹桃）</span><span class="st-meta">登録 2026.07.16 &middot; 夏 &middot; 街路の植え込み</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">キョウチクトウ（夾竹桃）</h2><p class="sci-name"><i>Nerium oleander</i> L.</p><p class="aka">別名 · オレアンダー ／ 八重咲きの園芸品種</p><p class="family">キョウチクトウ科 &middot; Apocynaceae（キョウチクトウ属）<strong>── 科の“名の主”。045・051・057と同じ科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「<strong>猛毒のあの子、早速見つけたよ</strong>」<span class="cv-sub">……派手で、丈夫で、猛毒で、そして広島では希望の花</span></p></div>
@@ -69,6 +74,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

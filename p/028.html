@@ -15,7 +15,17 @@
     <a class="back" href="029.html">次 ›</a>
   </nav>
 <article class="plate" id="p028">
-    <figure class="specimen"><div class="mount"><img src="../img/028.jpg" loading="lazy" alt="道ばたの草むらに咲くムラサキツユクサ。細長い葉のあいだから伸びた茎の先に、三枚の花びらが同じ大きさで三角にひらいた淡い紫の花。中心に黄色い葯と紫の毛の生えた雄しべ。まわりに緑のつぼみのかたまり。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/028.jpg" loading="lazy" alt="道ばたの草むらに咲くムラサキツユクサ。細長い葉のあいだから伸びた茎の先に、三枚の花びらが同じ大きさで三角にひらいた淡い紫の花。中心に黄色い葯と紫の毛の生えた雄しべ。まわりに緑のつぼみのかたまり。">
+        <div class="g-map" data-idx="1" data-cc="US,CA"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>北アメリカ（日本には明治期に渡来・各地で逸出／帰化）</b>。<br>日本の道ばたで会ったけれど、<b>日本は塗っていない</b>——明治のころに来て、逸げ出して野生化した子だから。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 028</span><span class="st-sp">ムラサキツユクサ</span><span class="st-meta">登録 2026.07.13 &middot; 夏 &middot; お散歩の道ばた（朝7:58）</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ムラサキツユクサ（紫露草）</h2><p class="sci-name"><i>Tradescantia ohiensis</i> Raf.</p><p class="aka">英名 · spiderwort（スパイダーウォート）／北アメリカ原産・日本では逸出して野生化</p><p class="family">ツユクサ科 &middot; Commelinaceae（ムラサキツユクサ属）</p><p class="cultivar"><span class="cv-key">燻太さんの気づき</span>この個体は、すこしだけ色が薄い<span class="cv-sub">……その「色の濃淡」こそが、この植物の一番の見どころ</span></p></div>
@@ -63,5 +73,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

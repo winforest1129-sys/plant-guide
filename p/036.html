@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/036.jpg" loading="lazy" alt="早春の青空の下、葉のない枝先に下向きに咲くミツマタの球形の頭花。外側は白い絹のような毛におおわれ、内側の小さな筒状の花は鮮やかな黄色。まわりの枝にも同じ花がいくつも下がっている。">
         <img class="g-img" data-idx="1" src="../img/036b.jpg" loading="lazy" alt="ミツマタの株全体を上から見たところ。葉のない灰褐色の枝が、幹から三方に分かれ、その先でまた三方に分かれ、さらに三方へと規則正しく枝分かれし、それぞれの先端に淡黄色の球形の花がぶら下がっている。">
+        <div class="g-map" data-idx="2" data-cc="CN-YN,CN-SC,CN-GZ,CN-HN,CN-HB,CN-GX,CN-CQ,NP,BT,IN,MM"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 花のアップ（外は白い毛、内は黄）</button>
         <button type="button" class="g-dot" data-idx="1">② 三つ又の枝ぶり（名前の由来）</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>中国中南部〜ヒマラヤ。日本には古く渡来（室町期ごろとされる）</b>。<br>日本には室町のころに渡ってきた子だから、<b>日本は塗っていない</b>。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 036</span><span class="st-sp">ミツマタ</span><span class="st-meta">登録 2026.07.13 &middot; 早春（撮影 2026.03.20）&middot; <strong>日本のお札の原料</strong></span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ミツマタ（三椏）</h2><p class="sci-name"><i>Edgeworthia chrysantha</i> Lindl.</p><p class="aka">別名 · <strong>カミノキ（紙の木）</strong>／英名 paperbush</p><p class="family">ジンチョウゲ科 &middot; Thymelaeaceae（ミツマタ属）</p><p class="cultivar"><span class="cv-key">燻太さんの出題</span>「めっきり見なくなった、でも大事な植物」<span class="cv-sub">……<strong>みんな毎日さわっているのに、誰もその姿を知らない植物。</strong></span></p></div>
@@ -71,6 +76,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

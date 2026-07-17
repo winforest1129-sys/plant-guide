@@ -19,11 +19,16 @@
       <div class="mount gallery">
         <img class="g-img show" data-idx="0" src="../img/067.jpg" loading="lazy" alt="太い枝と幹から直接ぶら下がる、色とりどりのカカオポッド（緑・橙・黄・赤紫）。ラグビーボール状で縦にうねが入る。幹の樹皮に白い小さな花も。温室。">
         <img class="g-img" data-idx="1" src="../img/067b.jpg" loading="lazy" alt="幹の樹皮に直接ついた白い小さな花（幹生花）と、幹からぶら下がる橙色のカカオポッド。うしろに温室の窓と緑のロープ。">
+        <div class="g-map" data-idx="2" data-cc="BR,PE,EC,CO,VE,BO,GY,SR,MX,GT,BZ,SV,HN,NI,CR,PA"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
       </div>
-      <div class="g-bar" role="group" aria-label="写真を切り替え">
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
         <button type="button" class="g-dot on" data-idx="0">① 幹生果（カカオポッド）</button>
         <button type="button" class="g-dot" data-idx="1">② 幹に咲く白い花</button>
+      
+      <button type="button" class="g-dot" data-idx="2">🌍 原産地</button>
       </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>中南米（アマゾン〜中米）の熱帯雨林</b>。<br>⭐<b>アマゾンの熱帯雨林の木</b>。チョコレートは、この地図の中から来たんだよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 067</span><span class="st-sp">カカオ（チョコレートの木）</span><span class="st-meta">登録 2026.07.16 &middot; 熱帯（撮影 2019・約7年前）&middot; 植物園の温室</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">カカオ（加加阿）</h2><p class="sci-name"><i>Theobroma cacao</i> L.</p><p class="aka">別名 · ココアノキ／チョコレートの木 ／ 旧アオギリ科</p><p class="family">アオイ科 &middot; Malvaceae（カカオ属）<strong>── 003 スイレンボク・038 フヨウと同じ科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの言葉</span>「幹にでっかいラグビーボール？ <strong>焙煎して砕くだけでもいい香り。でも食べすぎ注意。神の食べ物</strong>」<span class="cv-sub">……ヒントが、ぜんぶ当たり</span></p></div>
@@ -67,6 +72,9 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
-<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

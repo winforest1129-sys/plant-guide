@@ -15,7 +15,17 @@
     <a class="back" href="061.html">次 ›</a>
   </nav>
 <article class="plate" id="p060">
-    <figure class="specimen"><div class="mount"><img src="../img/060.jpg" loading="lazy" alt="紫紅色の小さな5弁の花。中心に黄色いおしべがたくさん。平たい披針形の多肉の葉が、赤みのある茎で地を這い、白い花壇の縁からこぼれる。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/060.jpg" loading="lazy" alt="紫紅色の小さな5弁の花。中心に黄色いおしべがたくさん。平たい披針形の多肉の葉が、赤みのある茎で地を這い、白い花壇の縁からこぼれる。">
+        <div class="g-map" data-idx="1" data-cc="MX,GT,BZ,SV,HN,NI,CR,PA,CU,JM,HT,DO,PR,BS,TT,CO,VE,GY,SR,EC,PE,BO,BR,PY,SN,GM,GW,GN,SL,LR,CI,GH,TG,BJ,NG,CM,GQ,GA,CG,CD,CF,AO,ZM,MW,MZ,TZ,KE,UG,RW,BI,ET,SS,SD,MG,IN,LK,BD,MM,TH,LA,VN,KH,MY,ID,PH,BN,TL,PG,SB,VU,FJ,NC"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>熱帯〜亜熱帯（スベリヒユは世界の温暖地に広く）</b>。<br>⭐<b>「広い」ことじたいが情報</b>。もとのスベリヒユは世界の温暖地にぐるりと広くいる（この子はその園芸種）。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 060</span><span class="st-sp">ポーチュラカ（ハナスベリヒユ）</span><span class="st-meta">登録 2026.07.16 &middot; 夏（日が当たると開く）&middot; 道ぞいの小さな花壇</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">ポーチュラカ（ハナスベリヒユ）</h2><p class="sci-name"><i>Portulaca oleracea</i> L. の園芸種</p><p class="aka">別名 · ハナスベリヒユ／タチスベリヒユ ／ 近縁にマツバボタン</p><p class="family">スベリヒユ科 &middot; Portulacaceae（スベリヒユ属）<strong>── この図鑑で初めての科</strong></p><p class="cultivar"><span class="cv-key">燻太さんの「名前がわからない」花</span>見つけたよ＝ポーチュラカ<span class="cv-sub">見た目は素朴。でも中身は“二刀流”</span></p></div>
@@ -52,5 +62,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>

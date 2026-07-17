@@ -15,7 +15,17 @@
     <a class="back" href="040.html">次 ›</a>
   </nav>
 <article class="plate" id="p039">
-    <figure class="specimen"><div class="mount"><img src="../img/039.jpg" loading="lazy" alt="白い外壁の前に立つスイフヨウの株。大きく掌状に裂けた葉のあいだに、淡いピンクの五弁の花が二輪ひらいている。まだ開いていない丸いつぼみがいくつも並ぶ。昼どきの、白から紅へ向かう途中の色。"></div>
+    <figure class="specimen"><div class="mount gallery">
+        <img class="g-img show" data-idx="0" src="../img/039.jpg" loading="lazy" alt="白い外壁の前に立つスイフヨウの株。大きく掌状に裂けた葉のあいだに、淡いピンクの五弁の花が二輪ひらいている。まだ開いていない丸いつぼみがいくつも並ぶ。昼どきの、白から紅へ向かう途中の色。">
+        <div class="g-map" data-idx="1" data-cc="CN-GD,CN-GX,CN-YN,CN-FJ,CN-HI,CN-JX,CN-HN,VN,LA,TH,MM,KH"><p class="g-map-load">地図を読み込んでいるよ…</p></div>
+      </div>
+      <div class="g-bar" role="group" aria-label="写真と地図を切り替え">
+        <button type="button" class="g-dot on" data-idx="0">① 写真</button>
+      
+      <button type="button" class="g-dot" data-idx="1">🌍 原産地</button>
+      </div>
+      <p class="zoom-hint">🔍 写真も地図も、<b>押しているあいだ拡大</b>して見られるよ（スマホは指を置いてすこし待ってね）。</p>
+      <p class="g-map-note">🌍 の地図＝この子が<b>もともと自生している場所</b>を緑に。<b>中国南部〜東南アジア（栽培品種／園芸品種）</b>。<br>⚠これは<b>もとになったフヨウの故郷</b>。スイフヨウはその園芸品種だから、この子だけの野生のふるさとは無いよ。<br>⚠ 地図は<b>国（日本と中国だけ県・省）までしか塗れない</b>から、ほんとうの分布より<b>広く見えていること</b>があるよ。<b>地図はだいたいの場所。正確なところは、上の文を見てね。</b></p>
       <figcaption class="specimen-tag"><span class="st-no">No. 039</span><span class="st-sp">スイフヨウ</span><span class="st-meta">登録 2026.07.13 &middot; 夏〜秋 &middot; <strong>昼の色</strong>（撮影 2021.08.11 12:56・大学時代）</span></figcaption>
     </figure>
     <div class="id-block"><h2 class="jp-name">スイフヨウ（酔芙蓉）</h2><p class="sci-name"><i>Hibiscus mutabilis</i> L. f. <i>versicolor</i></p><p class="aka">f. <i>versicolor</i> ＝「<strong>色とりどりの</strong>」／<a href="038.html">038 フヨウ</a>と<strong>同じ種</strong></p><p class="family">アオイ科 &middot; Malvaceae（フヨウ属）</p><p class="cultivar"><span class="cv-key">燻太さんの読み</span>「色づきを見るに、昼頃だね」<span class="cv-sub">……<strong>正確。そしてその一言が、この花がスイフヨウであることの証明になっている。</strong></span></p></div>
@@ -69,5 +79,8 @@
   </nav>
   <footer class="colophon"><p>陽介と燻太さんの植物図鑑</p></footer>
 </div>
+<script>document.addEventListener("click",function(e){var d=(e.target&&e.target.closest)?e.target.closest(".g-dot"):null;if(!d)return;var p=d.closest(".plate");var idx=d.getAttribute("data-idx");var im=p.querySelectorAll(".g-img,.g-map");for(var i=0;i<im.length;i++){im[i].classList.toggle("show",im[i].getAttribute("data-idx")===idx);}var dt=d.parentNode.querySelectorAll(".g-dot");for(var j=0;j<dt.length;j++){dt[j].classList.toggle("on",dt[j]===d);}});</script>
+<script src="../map.js" defer></script>
+<script src="../zoom.js" defer></script>
 </body>
 </html>
