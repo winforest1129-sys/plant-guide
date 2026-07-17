@@ -84,7 +84,10 @@
 
     function close() {
       clearTimeout(timer); timer = null;
-      if (lens) { lens.remove(); lens = null; }
+      // ⭐lens 変数だけでなく、DOMに残っている窓を「全部」片づける。
+      //   万一どこかで迷子（誰も参照していない窓）が生まれても、次に閉じたときに掃除される＝安全網。
+      Array.prototype.forEach.call(mount.querySelectorAll(".zoom-lens"), function (n) { n.remove(); });
+      lens = null;
       mount.classList.remove("zooming");
       mount.removeEventListener("touchmove", noScroll);
       on = false; pid = null;
@@ -97,6 +100,13 @@
       ptype = e.pointerType || "mouse";
       if (e.pointerType === "mouse" && e.button !== 0) return;
       if (e.target.closest && e.target.closest(".g-dot")) return;   // ボタンは押させる
+      // ⭐⭐追いかけるのは、いつも1本だけ。2本目以降の指は、はじめから相手にしない。
+      //   （2026-07-17・燻太さんが実機で発見：親指で虫めがねを出したまま、
+      //     反対の手の親指で画面を押して最初の指を離すと、窓が増えて、しかも残った。
+      //     原因＝ここで pid を無条件に上書きしていたので、2本目の指でも open() が走り、
+      //     lens 変数が新しい窓に差し替わって、前の窓が「誰も持っていない迷子」になっていた。
+      //     指を足すぶんだけ、何個でも増やせた。）
+      if (pid !== null) return;
       pid = e.pointerId; sx = e.clientX; sy = e.clientY;
       if (e.pointerType === "mouse") { e.preventDefault(); open(e); }
       else { timer = setTimeout(function () { open(e); }, HOLD); }   // 指はすこし待つ
@@ -128,10 +138,15 @@
       if (ptype !== "mouse") e.preventDefault();
     });
 
+    // ⭐閉じるのも「追いかけている指」のときだけ。
+    //   （そうしないと、2本目の指を離しただけで、1本目が出している窓が消えてしまう）
     ["pointerup", "pointercancel", "pointerleave"].forEach(function (t) {
-      mount.addEventListener(t, close);
+      mount.addEventListener(t, function (e) {
+        if (pid !== null && e.pointerId !== pid) return;   // よその指のイベントは無視
+        close();
+      });
     });
-    window.addEventListener("blur", close);
+    window.addEventListener("blur", close);   // 画面から離れたら、とにかく閉じる
   }
 
   Array.prototype.forEach.call(document.querySelectorAll(".specimen .mount"), setup);
