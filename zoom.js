@@ -91,10 +91,13 @@
     }
 
     mount.addEventListener("pointerdown", function (e) {
+      // ⚠ptype は「いちばん先に」覚える。右クリック（button!==0）で下の return に入っても、
+      //   「いま触っているのはマウス」だと記録しておかないと、下の contextmenu の判定が
+      //   前に触った指の値を引きずって、PCの右クリックまで殺してしまう。
+      ptype = e.pointerType || "mouse";
       if (e.pointerType === "mouse" && e.button !== 0) return;
       if (e.target.closest && e.target.closest(".g-dot")) return;   // ボタンは押させる
       pid = e.pointerId; sx = e.clientX; sy = e.clientY;
-      ptype = e.pointerType || "mouse";   // ← 指かマウスか。move() の持ち上げで使う
       if (e.pointerType === "mouse") { e.preventDefault(); open(e); }
       else { timer = setTimeout(function () { open(e); }, HOLD); }   // 指はすこし待つ
     });
@@ -106,6 +109,23 @@
       if (timer && (Math.abs(e.clientX - sx) + Math.abs(e.clientY - sy) > SLOP)) {
         clearTimeout(timer); timer = null; pid = null;
       }
+    });
+
+    // ⭐スマホの長押しで出る「画像をコピー／保存しますか？」のメニューを、指のときだけ止める。
+    //   （2026-07-17・燻太さんの決定：「この図鑑は二人のための図鑑だから、図鑑から画像を
+    //     コピーするつもりは今のところない。原本は自分達のPCにある。将来的に一般公開する
+    //     ことになるまでは、拡大鏡の仕様を優先する」）
+    //
+    //   ⚠これは画像を守る仕掛けでは まったくない。/img/086.jpg を直接開けば誰でも見られるし、
+    //     スクリーンショットも止められない。長押しが「虫めがね」と「ブラウザのメニュー」で
+    //     取り合いになるのを、やめさせるだけ。**守れていると思ってはいけない。**
+    //   ⚠一般公開するときに、ここは見直す約束。
+    //
+    //   ⚠なぜCSSだけでは足りないか：`-webkit-touch-callout:none`（style.cssにある）は
+    //     **iOS Safari だけ**。**Android Chrome には効かない**ので、contextmenu を止める。
+    //   ⚠マウスのときは止めない＝**PCの右クリックメニューは、今までどおり出る**。
+    mount.addEventListener("contextmenu", function (e) {
+      if (ptype !== "mouse") e.preventDefault();
     });
 
     ["pointerup", "pointercancel", "pointerleave"].forEach(function (t) {
