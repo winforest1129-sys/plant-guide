@@ -2,17 +2,28 @@
    ・マウス＝左ボタンを押しているあいだ
    ・スマホ＝指を置いてすこし待つ（すぐ動かしたときはスクロールとみなして、拡大しない）
    ・写真（.g-img）でも 地図（.g-map）でも効く。いま表示されている1枚を複製して拡大する。
-   ・JSが動かなければ、写真がふつうに出るだけ。ページは壊れない。 */
+   ・JSが動かなければ、写真がふつうに出るだけ。ページは壊れない。
+
+   ⭐マウスと指で、ふるまいを変えている（2026-07-17）
+     「どの端末か」ではなく「いま何で触っているか」で分ける ＝ e.pointerType。
+     ⚠機種名（ユーザーエージェント）で分けてはいけない：新しい機種で壊れるし、
+       タッチとマウスの両方が使えるPCだと破綻する。pointerType なら、
+       同じページで指とマウスが混ざっても正しく動く。
+     ・マウス → 押した瞬間に開く／窓はカーソルの真上（カーソルは点なので隠れない）
+     ・指   → すこし待ってから開く／窓を指の上へ持ち上げる
+       （燻太さんが実機で発見：指が太いので、窓の中心＝見たいところに指が重なる。
+         iPhoneの虫めがねと同じ手＝「指は見たい場所を指したまま、窓だけ上へどく」） */
 (function () {
   var ZOOM = 2.8;        // 拡大率
   var HOLD = 240;        // スマホで「押した」と認める時間(ms)
   var SLOP = 12;         // その間にこれ以上動いたら、スクロールだと判断する(px)
+  var GAP  = 10;         // 指のとき、窓の下のふちを 指から何px 離すか
 
   function setup(mount) {
     if (!mount.querySelector(".g-img, .g-map, img")) return;
     mount.classList.add("zoomable");
 
-    var lens = null, on = false, timer = null, sx = 0, sy = 0, pid = null;
+    var lens = null, on = false, timer = null, sx = 0, sy = 0, pid = null, ptype = "mouse";
 
     // いま見えている1枚（写真 or 地図）
     function current() {
@@ -58,8 +69,14 @@
       var x = Math.max(0, Math.min(b.w, e.clientX - b.left));
       var y = Math.max(0, Math.min(b.h, e.clientY - b.top));
       var R = lens.offsetWidth / 2;
+
+      // 指のときだけ、窓を持ち上げる（窓の下のふちが 指の GAP px 上にくる）。
+      // ⭐窓の中身は動かさない＝「窓の中心に写るのは、指が触っている場所」のまま。
+      //   だから「指で見たい場所を指したまま、窓だけ上へどく」になる。
+      var lift = (ptype === "mouse") ? 0 : (R + GAP);
+
       lens.style.left = (b.pl + x - R) + "px";
-      lens.style.top  = (b.pt + y - R) + "px";
+      lens.style.top  = (b.pt + y - R - lift) + "px";
       var inner = lens.firstChild;
       inner.style.left = (R - x * ZOOM) + "px";
       inner.style.top  = (R - y * ZOOM) + "px";
@@ -77,6 +94,7 @@
       if (e.pointerType === "mouse" && e.button !== 0) return;
       if (e.target.closest && e.target.closest(".g-dot")) return;   // ボタンは押させる
       pid = e.pointerId; sx = e.clientX; sy = e.clientY;
+      ptype = e.pointerType || "mouse";   // ← 指かマウスか。move() の持ち上げで使う
       if (e.pointerType === "mouse") { e.preventDefault(); open(e); }
       else { timer = setTimeout(function () { open(e); }, HOLD); }   // 指はすこし待つ
     });

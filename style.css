@@ -158,6 +158,14 @@
   .specimen{margin:0 0 24px}
   .specimen .mount{background:var(--paper);padding:12px;border:1px solid var(--line);box-shadow:inset 0 0 0 1px var(--panel),0 2px 6px -3px var(--shadow)}
   /* 押しているあいだの拡大窓（虫めがね）。写真でも地図でも効く。 */
+  /* ⚠スマホでは「長押し」が、虫めがねと ブラウザの文字選択／画像の保存メニュー と取り合いになる。
+     （2026-07-17に燻太さんが実機で発見：拡大すると下のボタンの文字が選択されてしまう）
+     虫めがねの当たり判定（.mount）と、そのすぐ下のボタン列（.g-bar）では、選択とコールアウトを切る。
+     ※figcaption や本文の文字は、ふつうに選べるままにしてある。 */
+  .specimen .mount, .g-bar{
+    -webkit-user-select:none; user-select:none;
+    -webkit-touch-callout:none;
+  }
   .mount.zoomable{position:relative;cursor:zoom-in}
   .mount.zoomable.zooming{cursor:none}
   .zoom-lens{position:absolute;width:190px;height:190px;border-radius:50%;overflow:hidden;
