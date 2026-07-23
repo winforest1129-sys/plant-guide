@@ -106,6 +106,18 @@
   .portal-arrow{margin-left:auto;flex:none;width:7px;height:7px;border-right:1.6px solid var(--sage);border-bottom:1.6px solid var(--sage);transform:rotate(-45deg);transition:transform .15s ease}
   .portal:hover .portal-arrow{transform:rotate(-45deg) translate(2px,2px)}
   @media (prefers-reduced-motion: reduce){.portal-arrow{transition:none}}
+  /* テーマの小道カードの中の、見出しへのミニ目次（2026-07-23） */
+  .portal-name-link{text-decoration:none}
+  .portal-name-link:hover{text-decoration:underline;text-decoration-color:var(--line-strong)}
+  .portal-trails{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:1px}
+  .portal-trails li{margin:0}
+  .portal-trails a{display:flex;align-items:baseline;gap:9px;padding:7px 8px;border-radius:3px;font-size:14px;line-height:1.4;color:var(--ink-soft);text-decoration:none;transition:background .15s ease,color .15s ease}
+  .portal-trails a:hover{background:var(--panel);color:var(--ink)}
+  .portal-trails .pt-mark{flex:none;font-size:14px;width:1.4em;text-align:center}
+  .portal-go-link{text-decoration:none;cursor:pointer}
+  .portal-go-link:hover{color:var(--ink)}
+  .portal-go-link:hover .portal-arrow{transform:rotate(-45deg) translate(2px,2px)}
+  @media (min-width:560px){.portal-trails{grid-template-columns:1fr 1fr;gap:1px 14px}}
 
   /* アーカイブ */
   .arc-tabs{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}
