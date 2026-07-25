@@ -73,6 +73,26 @@
   .pt-name{font-family:var(--serif);font-size:22px;color:var(--ink);letter-spacing:.04em}
   .pt-sub{font-family:var(--label);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
   .pt-note{margin:8px 0 0;font-style:italic;font-size:13.5px;color:var(--ink-soft);line-height:1.7}
+  /* ---- 表紙のポートレートを、横スクロールのギャラリーに（2026-07-25）----
+     指でスワイプ／ドラッグ／ホイールで切り替わる。scroll-snap なので JS が無くても動く。
+     写真ごとに縦横がちがうので、額（.mount）の高さをそろえて中に収める。 */
+  .pgal{display:flex;align-items:flex-start;gap:18px;overflow-x:auto;overflow-y:hidden;
+        scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 2px 12px;text-align:left;
+        -webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent}
+  .pgal::-webkit-scrollbar{height:7px}
+  .pgal::-webkit-scrollbar-track{background:transparent}
+  .pgal::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:4px}
+  .pgal .portrait{flex:0 0 min(340px,78%);scroll-snap-align:center;margin:0;display:block;
+                  max-width:none;width:auto;text-align:center}
+  .pgal .portrait .mount{display:flex;align-items:center;justify-content:center;height:330px}
+  .pgal .portrait img{width:auto;height:auto;max-width:100%;max-height:100%}
+  .pgal-bar{display:flex;justify-content:center;gap:9px;margin-top:4px}
+  .pgal-dot{width:10px;height:10px;padding:0;border-radius:50%;border:1px solid var(--line-strong);
+            background:var(--paper);cursor:pointer}
+  .pgal-dot.on{background:var(--gold);border-color:var(--gold)}
+  .pgal-dot:hover{border-color:var(--gold)}
+  .pgal-dot:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .pgal-hint{margin:10px 0 0;font-family:var(--label);font-size:11px;letter-spacing:.12em;color:var(--ink-soft)}
   /* ---- テーマの小道 ---- */
   .trails{margin:0 0 34px}
   .trail{background:var(--paper-2);border:1px solid var(--line);border-radius:3px;padding:18px 20px 14px;margin-bottom:14px}
