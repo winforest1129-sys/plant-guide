@@ -337,7 +337,10 @@
    上部の .specimen .mount と同じ見た目にそろえてある。JSが動かなくても1枚目は出る。 */
 .gset{margin:0 0 18px}
 .gset .mount{background:var(--paper);padding:12px;border:1px solid var(--line);box-shadow:inset 0 0 0 1px var(--panel),0 2px 6px -3px var(--shadow)}
-.gset .mount img{display:block;width:100%;height:auto}
+/* ⚠ここは .specimen img と同じ詳細度(0,1,1)にすること。
+   .gset .mount img と書くと(0,2,1)になって .gallery .g-img{display:none} に勝ってしまい、
+   写真が全部たてに並んでしまう（2026-07-25に一度やらかした）。 */
+.gset img{display:block;width:100%;height:auto}
 .gset .mount, .gset .g-bar{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .gset .g-bar{margin-top:10px}
 .gset-note{margin:8px 0 0;font-family:var(--label);font-size:11px;letter-spacing:.06em;color:var(--ink-soft);text-align:center}
