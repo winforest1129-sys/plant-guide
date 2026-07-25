@@ -149,5 +149,5 @@
     window.addEventListener("blur", close);   // 画面から離れたら、とにかく閉じる
   }
 
-  Array.prototype.forEach.call(document.querySelectorAll(".specimen .mount"), setup);
+  Array.prototype.forEach.call(document.querySelectorAll(".specimen .mount, .gset .mount"), setup);
 })();
