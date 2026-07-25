@@ -158,6 +158,14 @@
   .arc-tail{display:flex;align-items:baseline;gap:10px;flex:none;font-family:var(--label);font-size:11px;letter-spacing:.06em;color:var(--ink-soft);white-space:nowrap}
   .arc-date{font-variant-numeric:tabular-nums;color:var(--sage)}
   .arc-list[data-view="sys"] .arc-fam{display:none}
+  /* 更新順のときだけ、登録日のかわりに「手を入れた日」を出す（2026-07-25）。
+     日付の欄はひとつだけ。入れかえないと、同じ行に2つ日付がならんで読めなくなる。 */
+  .arc-upd{display:none;font-variant-numeric:tabular-nums;color:var(--sage)}
+  .arc-list[data-view="upd"] .arc-date{display:none}
+  .arc-list[data-view="upd"] .arc-upd{display:inline}
+  /* 登録したあとで話がふえた子の印。金色の小さな札。 */
+  .arc-new{margin-left:7px;padding:1px 5px;border:1px solid var(--gold);border-radius:2px;
+    font-size:10px;letter-spacing:.08em;color:var(--gold);font-weight:700}
   .arc-group{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
   .ag-main{font-family:var(--label);letter-spacing:.1em;color:var(--green)}
   .ag-sub{font-size:11.5px;font-style:italic;color:var(--ink-soft);letter-spacing:.04em}
@@ -167,6 +175,9 @@
   .arc-group.is-order .ag-main{font-size:12px;color:var(--sage);font-weight:600}
   .arc-group.is-fam{margin:9px 0 1px;padding-left:2px}
   .arc-group.is-fam .ag-main{font-size:14px;font-family:var(--serif);color:var(--ink);letter-spacing:.02em}
+  /* 更新順の日付の見出し。系統順の「大きな仲間」と同じ強さで、日の変わり目が分かるように。 */
+  .arc-group.is-date{margin:24px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--line-strong)}
+  .arc-group.is-date .ag-main{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
   .arc-foot{margin:26px 0 0;padding-top:14px;border-top:1px dotted var(--line);font-size:13px;line-height:1.8;color:var(--ink-soft);font-style:italic}
   .arc-foot b{font-style:normal;color:var(--green)}
   @media (max-width:520px){.arc-tail{flex:1 1 100%;padding-left:0}.arc-sci{display:block;margin-top:2px}}
@@ -331,6 +342,8 @@
 .recent-name{font-family:var(--serif);font-size:17px;color:var(--ink);min-width:0}
 .recent-meta{font-family:var(--label);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;margin-left:auto}
 @media (min-width:560px){.recent-list{flex-direction:row}.recent-list li{flex:1;display:flex}.recent-list a{flex-direction:column;width:100%}.recent-meta{margin-left:0;margin-top:auto;padding-top:5px}}
+/* 「さいきん新しい話がふえた子」の下の一行。アーカイブの更新順への案内。 */
+.recent-foot{margin:10px 0 0;font-size:13px;line-height:1.8;color:var(--ink-soft);font-style:italic;text-align:center}
 /* ── 節内ギャラリー（.gset）────────────────────────────────
    写真が増えてきたページで、上のギャラリーと本文を行ったり来たりしなくてすむように、
    その節でしか語らない写真（顕微鏡・実験・くらべもの）を、本文のすぐ上に置くための額。
