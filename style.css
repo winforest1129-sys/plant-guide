@@ -183,13 +183,21 @@
   @media (max-width:520px){.arc-tail{flex:1 1 100%;padding-left:0}.arc-sci{display:block;margin-top:2px}}
 
   .season-hunt{background:var(--paper-2);border:1px solid var(--line);border-radius:3px;padding:20px 22px;margin-bottom:8px;position:relative}
-  .hunt-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
-  .hunt-list li{display:inline-flex;align-items:baseline;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:7px 13px}
-  .hunt-name{font-size:18px;color:var(--ink)}
-  .hunt-season{font-family:var(--label);font-size:11px;letter-spacing:.12em;color:var(--gold)}
+  /* ⭐2026-08-23 燻太さんの指摘で作り直し＝名前を上、ヒントを下に。ヒントは すがた／どこで・いつ／だれのおまけ の3行だけにした */
+  .hunt-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
+  @media (min-width:640px){.hunt-list{grid-template-columns:1fr 1fr}}
+  @media (min-width:1000px){.hunt-list{grid-template-columns:1fr 1fr 1fr}}
+  .hunt-list li{display:block;background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:10px 13px 11px}
+  .hunt-name{display:block;font-size:18px;color:var(--ink);line-height:1.35;margin-bottom:5px}
+  .hunt-hint{display:block}
+  .h-look{display:block;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+  .h-meta{display:block;font-family:var(--label);font-size:11.5px;line-height:1.75;color:var(--green);margin-top:4px}
+  .h-meta b{font-weight:400;color:var(--gold);letter-spacing:.10em}
+  .h-from{display:block;font-family:var(--label);font-size:11px;letter-spacing:.08em;color:var(--sage);margin-top:5px}
+  .h-from a{color:var(--sage)}
+  .hunt-list li.found .h-look{color:var(--gold)}
   .hunt-list li.found{opacity:.72;background:transparent;border-style:dashed}
   .hunt-list li.found .hunt-name{text-decoration:line-through;color:var(--ink-soft)}
-  .hunt-list li.found .hunt-season{color:var(--sage);letter-spacing:.1em}
   .hunt-note{margin:15px 0 0;font-size:14.5px;color:var(--ink-soft);font-style:italic;line-height:1.7}
   .plate{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:clamp(20px,4vw,34px);margin-bottom:34px;scroll-margin-top:18px;box-shadow:0 1px 0 var(--line),0 18px 40px -30px var(--shadow)}
   html.js .plate.show{animation:rise .55s cubic-bezier(.2,.7,.2,1) both}
