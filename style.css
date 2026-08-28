@@ -399,8 +399,35 @@
 .wm-canvas .c.on{stroke:var(--range-edge);stroke-width:.7;cursor:pointer}
 /* 押している国は金色のふちで。⚠ 指の端末では :hover が「押したまま残る」ので hover:hover で囲む */
 @media (hover:hover){ .wm-canvas .c.on:hover{fill:var(--range-hi)} }
-.wm-canvas .c.sel{stroke:var(--gold);stroke-width:2.2;
-  filter:drop-shadow(0 0 3px var(--range-glow))}
+/* ⭐ えらんだ国は「外側のふちどり」で示す（2026-08-28に2回直した）。
+   ⚠ ふつうに枠を描くと、線は輪郭の<b>まんなか</b>に乗る＝半分は国の中に食いこむ。
+     日本のように細長い国だと、両岸から食いこんだ金が出会って まっ金色のかたまりになった。
+   → paint-order:stroke ＝ <b>枠を先に描いて、その上から塗りをかぶせる</b>。
+     枠の内側は塗りに隠れ、<b>外側の半分だけ</b>が残る＝中の緑が見えたまま、ふちが光る。 */
+.wm-canvas .c.sel{stroke:var(--gold);stroke-width:3.4;paint-order:stroke}
+/* ── 縮尺で見せるものを変える（2026-08-28・燻太さんの「県境で地図がつぶれている」）──
+   日本は47県・中国は31省に割ってあるので、世界地図の縮尺だと79本の輪郭線が重なって
+   まっ黒なかたまりになる。→ 遠いあいだは 県・省の境を消して、国のふち（.cx）だけ出す。
+   近づいたら（world.js が .close を付ける）入れかえる。 */
+.wm-canvas .c.sub{stroke-opacity:0}
+/* 日本・中国は 県・省に割ってあるので「国ぜんぶのふち」を持つ path が別にある（.cx）。
+   ⭐ これは SVG のいちばん下（g.halo）に敷いてあるので、太くしても内側は塗りに隠れる。
+   ⚠ 遠景の「国境の線」としては使わない ── となりの国の枠が境を描いてくれるし、
+     海に面したところは 白い海との差で ちゃんと見えるから。 */
+.wm-canvas .cx{fill:none;stroke:none;vector-effect:non-scaling-stroke;pointer-events:none}
+.wm-canvas .cx.sel{stroke:var(--gold);stroke-width:5}
+.wm-canvas.close .c.sub{stroke-opacity:1;stroke-width:.7}
+/* 遠景では 県・省を「国ぜんぶの数」の色でならす（つぎはぎに見せない）。
+   近づいたら、それぞれの県・省の色にもどる。
+   ⚠ 線を消すだけでは足りなかった（2026-08-28）＝となりあう塗りのあいだに、
+     アンチエイリアスの<b>うすいすきま</b>が残って、中国の省の形が透けて見えた。
+   → <b>塗りと同じ色の線</b>でふちどって、そのすきまを埋める。
+     ⚠ 太くしすぎない（0.6px）＝アルファベット順で先に描かれる隣国（AF・BT）との
+       国境線を、上から塗りつぶしてしまうから。 */
+.wm-canvas:not(.close) .c.sub.gq1{fill:var(--wm1);stroke:var(--wm1);stroke-opacity:1;stroke-width:.6}
+.wm-canvas:not(.close) .c.sub.gq2{fill:var(--wm2);stroke:var(--wm2);stroke-opacity:1;stroke-width:.6}
+.wm-canvas:not(.close) .c.sub.gq3{fill:var(--wm3);stroke:var(--wm3);stroke-opacity:1;stroke-width:.6}
+.wm-canvas:not(.close) .c.sub.gq4{fill:var(--wm4);stroke:var(--wm4);stroke-opacity:1;stroke-width:.6}
 .wm-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;margin:0;
   font-family:var(--label);font-size:12px;letter-spacing:.1em;color:var(--ink-soft)}
 .wm-tip{position:absolute;pointer-events:none;background:var(--panel);color:var(--ink);

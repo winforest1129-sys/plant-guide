@@ -1,6 +1,7 @@
 /* 世界のふるさとマップ（world.html）── 2026-08-28・300種のお祝いに
    ------------------------------------------------------------------
-   ・共有の map.svg を1回とってきて、ふるさとの子がいる区画を緑に塗る。
+   ・map-hi.svg（世界地図ページ専用の高解像度版）を1回とってきて、緑に塗る。
+     ⚠ 各ページの 🌍 が使う map.svg とは別物。あちらは小さく出すだけなので軽い110m版。
    ・ホイール／2本指でいくらでも拡大、ドラッグ／1本指で移動、押した国の子を下に出す。
    ・データ（区画→子の番号）は world.html の中に埋めこんである（build_world.py が作る）。
    ⚠ マウスと指の分けかたは、必ず e.pointerType で見る（機種名で分けない）。
@@ -39,7 +40,7 @@
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
 
   /* ---------------------------------------------------------- 地図を出す */
-  fetch("map.svg")
+  fetch("map-hi.svg")
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function (svg) {
       canvas.innerHTML = svg;
@@ -54,6 +55,17 @@
         p.classList.add("on");
         p.classList.add(n <= b[0] ? "q1" : n <= b[1] ? "q2" : n <= b[2] ? "q3" : "q4");
       });
+      /* ⭐ 遠くから見るときは、県・省を「国ぜんぶの数」の色で塗ってならす。
+         ⚠ 県ごとの色のままだと、日本や中国が つぎはぎに見える（境の線を消しても、
+           色の段差と、となりあう塗りのすきま（アンチエイリアス）が残るから）。
+         近づいたら（.close）県ごとの色に戻る＝そこではじめて「県ごとの数」を見せる。 */
+      Object.keys(data.g).forEach(function (par) {
+        var n = gids(par).length;
+        var q = n <= b[0] ? "gq1" : n <= b[1] ? "gq2" : n <= b[2] ? "gq3" : "gq4";
+        Object.keys(byId).forEach(function (id) {
+          if (parent(id) === par && id !== par) byId[id].classList.add(q);
+        });
+      });
       measure();
       reset();
       wire();
@@ -66,8 +78,14 @@
   /* ---------------------------------------------------------- 拡大と移動 */
   function measure() { baseW = stage.clientWidth; }
 
+  /* ⭐ 近づいたか（2026-08-28・燻太さんの「県境で地図がつぶれている」を受けて）
+     遠くから見ているあいだは、47県・31省の境を消して、国のふちだけ出す。
+     近づいたら入れかえる。＝地図のふつうのやりかた（縮尺で見せるものを変える）。 */
+  var CLOSE_K = 4;
+
   function apply() {
     canvas.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + k + ")";
+    canvas.classList.toggle("close", k >= CLOSE_K);
     if (zlabel) zlabel.textContent = "×" + (k < 9.95 ? k.toFixed(1) : Math.round(k));
   }
 
@@ -125,16 +143,19 @@
 
   function select(cc, keepWide) {
     if (!keepWide) wide = true;
-    Array.prototype.forEach.call(canvas.querySelectorAll("path.sel"), function (p) {
+    Array.prototype.forEach.call(canvas.querySelectorAll(".sel"), function (p) {
       p.classList.remove("sel");
     });
     sel = cc;
     if (cc) {
       var showing = showingCode();
       if (data.g[showing]) {
-        Object.keys(byId).forEach(function (id) {
-          if (parent(id) === showing) byId[id].classList.add("sel");
-        });
+        /* ⭐ 日本・中国は「国のふち」だけを光らせる（2026-08-28に直した）。
+           ⚠ 47県ぜんぶに金色の枠をつけると、県が小さいので枠どうしが重なって
+             日本がまっ金色のかたまりに見えてしまった（拡大しても中身が見えない）。
+             ふちは近づいても隠さない（CSS の .cx:not(.sel) を見て）。 */
+        var line = canvas.querySelector('.cx[data-cc="' + showing + '"]');
+        if (line) line.classList.add("sel");
       } else if (byId[showing]) {
         byId[showing].classList.add("sel");
       }
