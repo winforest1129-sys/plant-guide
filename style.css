@@ -3,7 +3,7 @@
     --paper:#ECEEE2;--paper-2:#E3E6D6;--panel:#F5F6EE;--ink:#262A1E;--ink-soft:#565C46;
     --green:#43502F;--sage:#7C8A63;--gold:#AD8227;--line:rgba(38,42,30,.16);
     --line-strong:rgba(38,42,30,.30);--shadow:rgba(38,42,30,.12);
-    --range-lo:#4E9E2E;--range-hi:#7ED957;--range-edge:#2F6B1A;--range-glow:rgba(80,175,45,.45);--range-glow-hi:rgba(90,200,50,.75);--range-blur:4px;
+    --range-lo:#4E9E2E;--range-hi:#7ED957;--range-edge:#2F6B1A;--range-glow:rgba(80,175,45,.45);--range-glow-hi:rgba(90,200,50,.75);--range-blur:4px;--wm1:#CBE1A9;--wm2:#9BCA72;--wm3:#5F9E3C;--wm4:#33701F;
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Hoefler Text",Georgia,"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP",serif;
     --label:"Optima","Gill Sans","Gill Sans MT","Yu Gothic UI","Yu Gothic","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
   }
@@ -12,17 +12,17 @@
       --paper:#171A12;--paper-2:#202417;--panel:#1E2216;--ink:#E9EBDB;--ink-soft:#AAB194;
       --green:#C3D2A2;--sage:#8D9C6F;--gold:#D3A94C;--line:rgba(233,235,219,.15);
       --line-strong:rgba(233,235,219,.28);--shadow:rgba(0,0,0,.35);
-      --range-lo:#4FA830;--range-hi:#A8EE72;--range-edge:#D6F7A8;--range-glow:rgba(120,230,80,.55);--range-glow-hi:rgba(150,255,110,1);--range-blur:7px;
+      --range-lo:#4FA830;--range-hi:#A8EE72;--range-edge:#D6F7A8;--range-glow:rgba(120,230,80,.55);--range-glow-hi:rgba(150,255,110,1);--range-blur:7px;--wm1:#2D5622;--wm2:#4C8A34;--wm3:#78BC4D;--wm4:#B8EF83;
     }
   }
   :root[data-theme="light"]{
-    --range-lo:#4E9E2E;--range-hi:#7ED957;--range-edge:#2F6B1A;--range-glow:rgba(80,175,45,.45);--range-glow-hi:rgba(90,200,50,.75);--range-blur:4px;
+    --range-lo:#4E9E2E;--range-hi:#7ED957;--range-edge:#2F6B1A;--range-glow:rgba(80,175,45,.45);--range-glow-hi:rgba(90,200,50,.75);--range-blur:4px;--wm1:#CBE1A9;--wm2:#9BCA72;--wm3:#5F9E3C;--wm4:#33701F;
     --paper:#ECEEE2;--paper-2:#E3E6D6;--panel:#F5F6EE;--ink:#262A1E;--ink-soft:#565C46;
     --green:#43502F;--sage:#7C8A63;--gold:#AD8227;--line:rgba(38,42,30,.16);
     --line-strong:rgba(38,42,30,.30);--shadow:rgba(38,42,30,.12);
   }
   :root[data-theme="dark"]{
-    --range-lo:#4FA830;--range-hi:#A8EE72;--range-edge:#D6F7A8;--range-glow:rgba(120,230,80,.55);--range-glow-hi:rgba(150,255,110,1);--range-blur:7px;
+    --range-lo:#4FA830;--range-hi:#A8EE72;--range-edge:#D6F7A8;--range-glow:rgba(120,230,80,.55);--range-glow-hi:rgba(150,255,110,1);--range-blur:7px;--wm1:#2D5622;--wm2:#4C8A34;--wm3:#78BC4D;--wm4:#B8EF83;
     --paper:#171A12;--paper-2:#202417;--panel:#1E2216;--ink:#E9EBDB;--ink-soft:#AAB194;
     --green:#C3D2A2;--sage:#8D9C6F;--gold:#D3A94C;--line:rgba(233,235,219,.15);
     --line-strong:rgba(233,235,219,.28);--shadow:rgba(0,0,0,.35);
@@ -365,3 +365,112 @@
 .gset .mount, .gset .g-bar{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .gset .g-bar{margin-top:10px}
 .gset-note{margin:8px 0 0;font-family:var(--label);font-size:11px;letter-spacing:.06em;color:var(--ink-soft);text-align:center}
+/* ── 世界のふるさとマップ（world.html）── 2026-08-28・300種のお祝いに ──────────
+   燻太さんのリクエスト＝「トップに世界地図のボタン。自由に拡大できて、
+   国を押すと、その国をふるさとにしている子の一覧が出る」。
+   ⚠ 拡大・移動は world.js が .wm-canvas の transform を動かしている。
+     .wm-stage は touch-action:none ＝ 地図の上では ページのスクロールでなく地図が動く。
+     この地図は「読むもの」ではなく「さわるもの」なので、そこは地図にゆずってある。 */
+.guide-wide{max-width:860px}
+.wm{margin:0 0 26px}
+.wm-lede{margin:0 0 18px;font-size:15.5px;line-height:1.9;color:var(--ink-soft)}
+.wm-lede b{color:var(--green);font-weight:600}
+.wm-stage{position:relative;overflow:hidden;background:var(--panel);
+  border:1px solid var(--line-strong);border-radius:2px;
+  aspect-ratio:1000/394.444;cursor:grab;touch-action:none;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+/* スマホは横がせまくて 地図がぺしゃんこになるので、たてにゆとりをもたせる */
+@media (max-width:640px){
+  .wm-stage{aspect-ratio:6/5}
+  /* せまい画面では、見出しと数を たてに置く（横に押しあって わたが入るのを防ぐ）*/
+  .wm-listbox summary{flex-wrap:wrap;gap:4px 12px}
+  .wm-listbox-n{margin-left:0;flex-basis:100%}
+}
+.wm-stage.drag{cursor:grabbing}
+.wm-stage:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wm-canvas{position:absolute;left:0;top:0;width:100%;transform-origin:0 0;will-change:transform}
+.wm-canvas svg{width:100%;height:auto;display:block}
+.wm-canvas .c{fill:var(--paper-2);stroke:var(--line-strong);stroke-width:.5;
+  vector-effect:non-scaling-stroke}
+.wm-canvas .c.q1{fill:var(--wm1)}
+.wm-canvas .c.q2{fill:var(--wm2)}
+.wm-canvas .c.q3{fill:var(--wm3)}
+.wm-canvas .c.q4{fill:var(--wm4)}
+.wm-canvas .c.on{stroke:var(--range-edge);stroke-width:.7;cursor:pointer}
+/* 押している国は金色のふちで。⚠ 指の端末では :hover が「押したまま残る」ので hover:hover で囲む */
+@media (hover:hover){ .wm-canvas .c.on:hover{fill:var(--range-hi)} }
+.wm-canvas .c.sel{stroke:var(--gold);stroke-width:2.2;
+  filter:drop-shadow(0 0 3px var(--range-glow))}
+.wm-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;margin:0;
+  font-family:var(--label);font-size:12px;letter-spacing:.1em;color:var(--ink-soft)}
+.wm-tip{position:absolute;pointer-events:none;background:var(--panel);color:var(--ink);
+  border:1px solid var(--line-strong);border-radius:2px;padding:4px 9px;
+  font-family:var(--label);font-size:12px;letter-spacing:.04em;white-space:nowrap;
+  box-shadow:0 2px 8px -3px var(--shadow)}
+.wm-bar{display:flex;align-items:center;gap:8px;margin-top:10px}
+.wm-btn{font-family:var(--label);font-size:15px;line-height:1;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;
+  width:38px;height:34px;cursor:pointer}
+.wm-btn-w{width:auto;padding:0 14px;font-size:12px;letter-spacing:.08em}
+.wm-btn:hover{background:var(--paper-2)}
+.wm-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wm-zoom{margin-left:auto;font-family:var(--label);font-size:12px;letter-spacing:.08em;
+  color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.wm-hint{margin:10px 0 0;font-size:12.5px;line-height:1.9;color:var(--ink-soft);font-style:italic}
+.wm-hint b{font-style:normal;color:var(--green)}
+.wm-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:12px;
+  font-family:var(--label);font-size:11px;letter-spacing:.06em;color:var(--ink-soft)}
+.wm-legend-h{text-transform:none;letter-spacing:.1em}
+.wm-key{display:inline-flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums}
+.wm-sw{width:15px;height:11px;border:1px solid var(--line-strong);display:inline-block}
+.wm-sw.q1{background:var(--wm1)}.wm-sw.q2{background:var(--wm2)}
+.wm-sw.q3{background:var(--wm3)}.wm-sw.q4{background:var(--wm4)}
+.wm-panel{border:1px solid var(--line);border-radius:3px;background:var(--paper-2);
+  padding:16px 18px;margin-bottom:26px;scroll-margin-top:12px}
+.wm-panel-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;
+  padding-bottom:10px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.wm-panel-name{font-family:var(--serif);font-size:25px;font-weight:600;margin:0;color:var(--ink);
+  letter-spacing:.03em}
+.wm-panel-n{margin:0;font-family:var(--label);font-size:12px;letter-spacing:.08em;color:var(--ink-soft)}
+.wm-panel-n b{color:var(--green);font-size:15px;font-variant-numeric:tabular-nums}
+.wm-toggle{margin-left:auto;font-family:var(--label);font-size:11.5px;letter-spacing:.06em;
+  color:var(--green);background:var(--paper);border:1px solid var(--line-strong);
+  border-radius:2px;padding:6px 12px;cursor:pointer}
+.wm-toggle:hover{background:var(--panel)}
+.wm-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wm-plants{max-height:min(60vh,520px);overflow-y:auto}
+.wm-empty{margin:6px 0;font-size:15px;line-height:1.9;color:var(--ink-soft)}
+.wm-empty b{color:var(--green);font-weight:600}
+.wm-panel-foot{margin:12px 0 0;font-size:11.5px;line-height:1.8;color:var(--ink-soft);font-style:italic}
+.wm-panel-foot b{font-style:normal;color:var(--green)}
+.wm-listbox{border:1px solid var(--line);border-radius:3px;padding:0 18px;margin-bottom:26px}
+.wm-listbox summary{display:flex;align-items:baseline;gap:12px;cursor:pointer;padding:14px 0;
+  list-style:none}
+.wm-listbox summary::-webkit-details-marker{display:none}
+.wm-listbox summary h2{font-family:var(--serif);font-size:20px;font-weight:600;margin:0;
+  color:var(--ink);letter-spacing:.03em}
+.wm-listbox summary::before{content:"▸";color:var(--gold);font-size:13px}
+.wm-listbox[open] summary::before{content:"▾"}
+.wm-listbox-n{margin-left:auto;font-family:var(--label);font-size:11px;letter-spacing:.08em;
+  color:var(--ink-soft)}
+.wm-listbox-note{margin:0 0 12px;font-size:13px;color:var(--ink-soft);font-style:italic}
+.wm-filter input{width:100%;font-family:var(--serif);font-size:15px;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;padding:9px 12px}
+.wm-filter input:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.wm-picks{list-style:none;margin:12px 0 18px;padding:0;max-height:min(56vh,460px);overflow-y:auto}
+.wm-pick{display:flex;align-items:baseline;gap:10px;width:100%;text-align:left;
+  font-family:var(--serif);font-size:15.5px;color:var(--ink);background:none;border:0;
+  border-bottom:1px solid var(--line);padding:10px 6px;cursor:pointer}
+.wm-pick:hover{background:var(--paper-2)}
+.wm-pick:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.wm-pick-lead{flex:1;min-width:14px;border-bottom:1px dotted var(--line-strong);transform:translateY(-4px)}
+.wm-pick-n{font-family:var(--label);font-size:12px;color:var(--gold);font-weight:700;
+  font-variant-numeric:tabular-nums}
+.wm-nohit{margin:0 0 16px;font-size:14px;color:var(--ink-soft);font-style:italic}
+.wm-unknown{margin-bottom:26px}
+.wm-h{font-family:var(--serif);font-size:20px;font-weight:600;margin:0 0 8px;color:var(--ink);
+  letter-spacing:.03em}
+.wm-note{margin:0 0 12px;font-size:13.5px;line-height:1.85;color:var(--ink-soft)}
+.wm-note b{color:var(--green);font-weight:600}
+.wm-foot{margin:0 0 10px;font-size:12px;line-height:1.9;color:var(--ink-soft);font-style:italic}
+.wm-foot b{font-style:normal;color:var(--green)}
