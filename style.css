@@ -273,6 +273,13 @@
   .care-row dd{margin:0;font-size:15px;line-height:1.8;color:var(--ink)}
   .care-row dd strong{color:var(--green);font-weight:700}
   .care-note{margin:14px 0 0;font-size:13px;font-style:italic;color:var(--ink-soft);line-height:1.75}
+
+  /* 🐺 大河のコラム ── 動物のことを、動物担当の大河が差し込む枠（2026-09-02 新設）。
+     .care と同じ紙色を使い、左に一本アクセントを入れて「よその声」だと分かるようにする。 */
+  .taiga-col{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--sage);
+    padding:16px 18px}
+  .taiga-col>.field-label{margin-top:0}
+  .taiga-sign{margin:14px 0 0;font-size:13px;font-style:italic;color:var(--ink-soft);text-align:right}
   .care-src{margin:7px 0 0;font-size:12px;color:var(--ink-soft);line-height:1.7}
   .care-src a{color:var(--green)}
   /* 花言葉パネル（.care の見た目を借りる） */
