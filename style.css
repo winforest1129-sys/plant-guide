@@ -508,3 +508,80 @@
 .wm-note b{color:var(--green);font-weight:600}
 .wm-foot{margin:0 0 10px;font-size:12px;line-height:1.9;color:var(--ink-soft);font-style:italic}
 .wm-foot b{font-style:normal;color:var(--green)}
+
+/* ═══════════════════════════════════════════════════════════════
+   温室の中の紙（2026-09-04）
+   ⭐ 図鑑の本文を「紙の帳面」にして、そのまわりに温室を見せる。
+   ⚠ いまの背景は<b>仮</b>。絵ができたら --scene-art に url() を入れるだけで差し替わる。
+   ⭐ 昼と夜の2枚に対応できるよう、明暗それぞれで別の絵を指定できる形にしてある。
+   ═══════════════════════════════════════════════════════════════ */
+
+:root{
+  /* 温室の地の色（明るいテーマ＝朝の温室） */
+  --scene-back:#3C4E2C;
+  --scene-deep:#26331C;
+  --scene-glass:rgba(236,238,226,.13);   /* ガラスの桟 */
+  --scene-beam:rgba(255,248,214,.20);    /* 差しこむ光 */
+  --scene-haze:rgba(236,238,226,.10);    /* 空気のかすみ */
+  --scene-art:url("img/scene-day.jpg");
+  --paper-lift:0 1px 2px rgba(38,42,30,.18), 0 14px 44px rgba(20,26,14,.30);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --scene-back:#141C0F;
+    --scene-deep:#080C06;
+    --scene-glass:rgba(233,235,219,.07);
+    --scene-beam:rgba(255,238,180,.11);
+    --scene-haze:rgba(233,235,219,.05);
+    --scene-art:url("img/scene-night.jpg");
+    --paper-lift:0 1px 2px rgba(0,0,0,.5), 0 14px 44px rgba(0,0,0,.55);
+  }
+}
+:root[data-theme="light"]{
+  --scene-back:#3C4E2C; --scene-deep:#26331C;
+  --scene-glass:rgba(236,238,226,.13); --scene-beam:rgba(255,248,214,.20);
+  --scene-haze:rgba(236,238,226,.10); --scene-art:url("img/scene-day.jpg");
+  --paper-lift:0 1px 2px rgba(38,42,30,.18), 0 14px 44px rgba(20,26,14,.30);
+}
+:root[data-theme="dark"]{
+  --scene-back:#141C0F; --scene-deep:#080C06;
+  --scene-glass:rgba(233,235,219,.07); --scene-beam:rgba(255,238,180,.11);
+  --scene-haze:rgba(233,235,219,.05); --scene-art:url("img/scene-night.jpg");
+  --paper-lift:0 1px 2px rgba(0,0,0,.5), 0 14px 44px rgba(0,0,0,.55);
+}
+
+/* ── 温室（body の背景） ── */
+body{
+  background-color:var(--scene-deep);
+  background-image:
+    /* ① 絵が入ったら、いちばん上に乗る */
+    var(--scene-art),
+    /* ② 斜めに差しこむ光の筋 */
+    linear-gradient(102deg,
+      transparent 0 24%, var(--scene-beam) 30%, transparent 37%,
+      transparent 55%, var(--scene-beam) 61%, transparent 69%),
+    /* ③ ガラスの桟（縦） */
+    repeating-linear-gradient(90deg,
+      transparent 0 116px, var(--scene-glass) 116px 120px),
+    /* ④ 屋根のほうが明るい */
+    radial-gradient(120% 70% at 50% -12%, var(--scene-haze) 0 42%, transparent 72%),
+    /* ⑤ 地の色 */
+    linear-gradient(178deg, var(--scene-back) 0%, var(--scene-deep) 78%);
+  background-attachment:fixed, fixed, fixed, fixed, fixed;
+  background-position:center center, center center, center top, center top, center top;
+  background-repeat:no-repeat, no-repeat, repeat-y, no-repeat, no-repeat;
+  background-size:cover, cover, auto, cover, cover;
+}
+
+/* ── 紙の帳面（本文） ── */
+.guide{
+  background:var(--paper);
+  border-radius:2px;
+  box-shadow:var(--paper-lift);
+  position:relative;
+}
+
+/* ⭐ 携帯では紙が画面いっぱいになるので、浮かせない */
+@media (max-width:780px){
+  .guide{border-radius:0;box-shadow:none}
+}
