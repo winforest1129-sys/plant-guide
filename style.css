@@ -585,3 +585,10 @@ body{
 @media (max-width:780px){
   .guide{border-radius:0;box-shadow:none}
 }
+
+/* ── 昼と夜の切り替えボタン（2026-09-06） ──
+   ⭐ 見た目は .back（ナビのリンク）を借りているので、ここは button の素の癖を消すだけ。
+   ⭐ 中身は theme.js が入れる。JSが動かない端末では、そもそもボタンが出ない＝端末まかせのまま。 */
+.theme-btn{cursor:pointer;flex:none;white-space:nowrap;line-height:1.1;
+  font-family:var(--label);font-size:12px;letter-spacing:.12em;color:var(--green)}
+.masthead .theme-btn{margin-top:20px}
